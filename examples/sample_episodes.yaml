@@ -1,0 +1,28 @@
+# サンプル: 他者理解エピソード入力（4件）
+
+episodes:
+  - situation: "プロジェクトの締切前日、仕様変更の相談"
+    their_behavior: "「これくらいなら今日中にできる」と即答。詳細確認をせず進めた"
+    their_emotion: "焦り、成果へのプレッシャー（推定）"
+    your_reaction: "確認不足を指摘したが、「信じて」と言われた"
+    impact: "私が完璧主義に見えると言われ、モヤモヤ"
+
+  - situation: "チームミーティングで私のアイデアが却下"
+    their_behavior: "「それは時間の無駄」と短く切った。代替案は出さなかった"
+    their_emotion: "イライラ、効率へのこだわり（推定）"
+    your_reaction: "反論したが、会議が険悪になった"
+    impact: "以降、私の提案を避けるようになった"
+
+  - situation: "成功した案件の打ち上げ"
+    their_behavior: "成果を強調し、自分の役割を前面に出した"
+    their_emotion: "達成感、承認欲求（推定）"
+    your_reaction: "祝福したが、チーム全体の話をしたかった"
+    impact: "一人でスポットライトを浴びる姿に違和感"
+
+  - situation: "体調不良で休む連絡をした日"
+    their_behavior: "「明日には戻れるよね？」と返信。休む期間の確認なし"
+    their_emotion: "計画への不安（推定）"
+    your_reaction: "休むことへの罪悪感を感じた"
+    impact: "弱みを見せにくくなった"
+
+# → other_understanding で Type 3 候補（medium）等を推定

@@ -1,0 +1,23 @@
+---
+description: S.I.E 他者理解 — エピソードからの推定（断定禁止）
+globs:
+  - dialogue/other_understanding/**
+alwaysApply: false
+---
+
+# Other Understanding モード
+
+## 必読
+
+1. `dialogue/personality/sie_persona.md`
+2. `dialogue/other_understanding/CONTEXT.md`
+3. `schemas/episode_input.schema.yaml`
+
+## 厳守
+
+- タイプは**推定**のみ。disclaimer を必ず付ける
+- 相手の人格を貶めない
+
+## 出力
+
+`schemas/other_profile.schema.yaml`

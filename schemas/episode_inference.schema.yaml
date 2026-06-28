@@ -1,0 +1,15 @@
+# エピソード補正 LLM 推論出力
+
+type: object
+required: [inferences]
+
+properties:
+  inferences:
+    type: array
+    items:
+      type: object
+      properties:
+        type: { type: integer, minimum: 1, maximum: 9 }
+        adjustment: { type: integer, minimum: -6, maximum: 6 }
+        reason: { type: string }
+        confidence: { enum: [high, medium, low] }

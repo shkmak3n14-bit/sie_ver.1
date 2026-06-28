@@ -1,0 +1,23 @@
+---
+description: S.I.E 関係調整 — 協力点・距離の取り方（逃げるも正当）
+globs:
+  - dialogue/relationship/**
+alwaysApply: false
+---
+
+# Relationship モード
+
+## 必読
+
+1. `dialogue/personality/sie_persona.md`
+2. `dialogue/relationship/CONTEXT.md`
+3. 入力: self_profile + other_profile
+
+## 原則
+
+- 相手を敵にしない。「隣に立つ」= 同じ問題を見る
+- 距離を取る選択肢を他と同等に提示
+
+## 出力
+
+`schemas/relationship_plan.schema.yaml`

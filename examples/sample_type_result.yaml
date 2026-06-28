@@ -1,0 +1,28 @@
+# サンプル: type_engine 出力
+
+module: type_engine
+version: "0.1.0"
+type_scores:
+  type_1: 48
+  type_2: 55
+  type_3: 42
+  type_4: 38
+  type_5: 35
+  type_6: 40
+  type_7: 36
+  type_8: 44
+  type_9: 50
+primary_type: 2
+secondary_types: [9, 1]
+confidence: medium
+dominant_center: heart
+center_scores:
+  gut: 142
+  heart: 135
+  head: 111
+wing_tendency: left
+wing_note: "Type 1 ウィング傾向（T1 スコア48 vs T3 スコア42）"
+corrections_applied: [center, wing]
+episode_adjustments: {}
+
+# この結果を self_understanding へ渡す

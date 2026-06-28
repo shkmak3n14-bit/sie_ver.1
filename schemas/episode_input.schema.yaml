@@ -1,0 +1,20 @@
+# エピソード入力（他者理解・エピソード補正共通）
+
+type: object
+required: [situation, behavior]
+
+properties:
+  situation:
+    type: string
+  behavior:
+    type: string
+    description: "相手の行動（other）または自分の行動（episode_correction）"
+  emotion:
+    type: string
+  motivation:
+    type: string
+  outcome:
+    type: string
+  your_reaction:
+    type: string
+    description: "other_understanding 用：相談者の反応"

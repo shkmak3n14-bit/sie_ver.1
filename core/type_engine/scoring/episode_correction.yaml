@@ -1,0 +1,57 @@
+# エピソード補正
+# 相談者が語る具体エピソードから、定量スコアを微調整する
+
+enabled: true
+optional: true  # 未入力でも診断は完了する
+
+input:
+  min_episodes: 0
+  max_episodes: 5
+  fields_per_episode:
+    - situation    # 状況
+    - behavior     # 自分の行動
+    - motivation   # そのとき大切にしていたこと
+    - emotion      # 感情
+    - outcome      # 結果
+
+# エピソードから読み取るタイプシグナル（キーワード→タイプ加点）
+type_signals:
+  1:
+    keywords: ["正しい", "改善", "ルール", "完璧", "批判", "義務"]
+    weight: 2
+  2:
+    keywords: ["助け", "必要とされる", "世話", "感謝", "拒絶される"]
+    weight: 2
+  3:
+    keywords: ["成果", "評価", "成功", "効率", "見栄", "目標"]
+    weight: 2
+  4:
+    keywords: ["特別", "本物", "欠落", "比較", "深い感情", "独自"]
+    weight: 2
+  5:
+    keywords: ["観察", "距離", "知識", "エネルギー", "プライバシー", "分析"]
+    weight: 2
+  6:
+    keywords: ["不安", "信頼", "準備", "権威", "Worst case", "忠誠"]
+    weight: 2
+  7:
+    keywords: ["選択肢", "楽しさ", "退屈", "計画", "逃げ", "可能性"]
+    weight: 2
+  8:
+    keywords: ["支配", "公正", "弱さ", "直面", "力", "コントロール"]
+    weight: 2
+  9:
+    keywords: ["平和", "調和", "受け入れ", "優先順位", "惰性", "回避"]
+    weight: 2
+
+correction:
+  max_adjustment_per_type: 6   # 1エピソードあたり最大±6
+  max_total_adjustment: 15     # 全エピソード合計の上限
+  method: "keyword_match + LLM_structured_inference"
+
+  # LLM推論時は type_engine 人格なしで type_id と confidence のみ返す
+  llm_output_schema: schemas/episode_inference.schema.yaml
+
+output:
+  episode_adjustments: {}  # type_1 .. type_9 への加点
+  episode_notes: []        # 補正理由の短文（事実のみ）

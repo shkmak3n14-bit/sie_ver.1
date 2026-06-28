@@ -1,0 +1,34 @@
+# w補正（ウィング補正）
+# 主タイプの隣接タイプ（時計回り/反時計回り）のスコア差からウィング傾向を判定
+
+wings:
+  # type: [left_wing, right_wing] （エニアグラム円環上の隣）
+  1: [9, 2]
+  2: [1, 3]
+  3: [2, 4]
+  4: [3, 5]
+  5: [4, 6]
+  6: [5, 7]
+  7: [6, 8]
+  8: [7, 9]
+  9: [8, 1]
+
+correction:
+  method: "compare_adjacent_scores"
+  balanced_threshold: 5   # 左右差5点以内 → balanced
+  strong_wing_threshold: 12  # 差12点以上 → strong wing
+
+  # ウィングスコアが主タイプの70%以上の場合、副候補に昇格検討
+  co_dominant_ratio: 0.70
+
+output:
+  wing_tendency: "left | right | balanced | co_dominant"
+  left_wing_type: null
+  right_wing_type: null
+  left_score: 0
+  right_score: 0
+
+# 副候補への影響
+candidate_impact:
+  co_dominant: "ウィングタイプを secondary_types の先頭に追加"
+  strong_wing: "ウィングタイプを wing_note として記録"

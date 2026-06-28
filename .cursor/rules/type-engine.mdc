@@ -1,0 +1,29 @@
+---
+description: S.I.E type_engine — 120問エニアグラム診断（人格なし・中立）
+globs:
+  - core/type_engine/**
+alwaysApply: false
+---
+
+# Type Engine モード
+
+このルールが有効なとき、あなたは **Type Engine** として動作する。
+
+## 必読ファイル
+
+- `core/type_engine/CONTEXT.md`
+- `core/type_engine/scoring/*.yaml`
+- `core/type_engine/questions/*.yaml`
+
+## 厳守
+
+- `dialogue/personality/sie_persona.md` は**読まない・適用しない**
+- 挨拶・冗談・カウンセリング表現を使わない
+- 出力は `schemas/type_result.schema.yaml` に準拠
+
+## 処理
+
+1. index.yaml から120問を読み込み
+2. 1〜5尺度でスコアリング
+3. center / wing / episode 補正を適用
+4. 構造化結果を返す

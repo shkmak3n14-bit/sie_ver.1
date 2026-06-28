@@ -1,0 +1,46 @@
+# 120問マスタインデックス（9タイプ × 15問）
+
+version: "0.1.0"
+scale_ref: "../scoring/rules.yaml#scale"
+
+type_order: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+types:
+  1:
+    file: type_1.yaml
+    name: "改革する人"
+    center: gut
+  2:
+    file: type_2.yaml
+    name: "奉仕する人"
+    center: heart
+  3:
+    file: type_3.yaml
+    name: "成功を目指す人"
+    center: heart
+  4:
+    file: type_4.yaml
+    name: "個性を求める人"
+    center: heart
+  5:
+    file: type_5.yaml
+    name: "調べる人"
+    center: head
+  6:
+    file: type_6.yaml
+    name: "忠実な人"
+    center: head
+  7:
+    file: type_7.yaml
+    name: "熱中する人"
+    center: head
+  8:
+    file: type_8.yaml
+    name: "挑戦する人"
+    center: gut
+  9:
+    file: type_9.yaml
+    name: "平和を求める人"
+    center: gut
+
+# 質問ID形式: T{type}_{01..15}  例: T1_01

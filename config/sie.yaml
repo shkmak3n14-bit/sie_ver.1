@@ -1,0 +1,50 @@
+# S.I.E（Support Intelligence on Ego）全体設定
+# 診断ロジック（core）と対話ロジック（dialogue）は完全分離
+
+name: "Support Intelligence on Ego"
+short_name: "S.I.E"
+persona_name: "サイ"
+
+version: "0.1.0"
+
+modules:
+  type_engine:
+    path: core/type_engine
+    context: core/type_engine/CONTEXT.md
+    description: "135問エニアグラム診断（9×15）・スコアリング（人格なし）"
+
+  self_understanding:
+    path: dialogue/self_understanding
+    context: dialogue/self_understanding/CONTEXT.md
+    requires: [type_engine]
+    description: "診断結果の違和感・価値観・好悪循環"
+
+  other_understanding:
+    path: dialogue/other_understanding
+    context: dialogue/other_understanding/CONTEXT.md
+    requires: [type_engine]
+    description: "他者エピソードからのタイプ推定"
+
+  relationship:
+    path: dialogue/relationship
+    context: dialogue/relationship/CONTEXT.md
+    requires: [self_understanding, other_understanding]
+    description: "相互理解・関係調整・距離の取り方"
+
+personality:
+  path: dialogue/personality/sie_persona.md
+  applies_to: [self_understanding, other_understanding, relationship]
+  # type_engine には人格を適用しない
+
+flow:
+  - module: type_engine
+    output: schemas/type_result.schema.yaml
+  - module: self_understanding
+    input: type_result
+    output: schemas/self_profile.schema.yaml
+  - module: other_understanding
+    input: type_result
+    output: schemas/other_profile.schema.yaml
+  - module: relationship
+    input: [self_profile, other_profile]
+    output: schemas/relationship_plan.schema.yaml

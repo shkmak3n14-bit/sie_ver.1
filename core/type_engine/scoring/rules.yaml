@@ -1,0 +1,40 @@
+# スコアリング基本ルール
+
+scale:
+  min: 1
+  max: 5
+  labels:
+    1: "全く当てはまらない"
+    2: "あまり当てはまらない"
+    3: "どちらとも言えない"
+    4: "やや当てはまる"
+    5: "非常に当てはまる"
+
+questions_per_type: 15
+total_questions: 135  # 9タイプ × 15問
+max_score_per_type: 75  # 15 × 5
+
+# タイプ候補抽出
+candidate_extraction:
+  primary: "最高スコアのタイプ"
+  secondary:
+    count: 2
+    rule: "主タイプ以外でスコア上位2タイプ"
+  confidence:
+    high: "1位と2位の差が15以上"
+    medium: "差が8〜14"
+    low: "差が7以下"
+
+# 同点時の優先順位（センター補正前）
+tie_breaker:
+  - "回答のばらつき（標準偏差）が小さいタイプを優先"
+  - "それでも同点なら index.yaml の type_order 順"
+
+output_fields:
+  - type_scores        # type_1 .. type_9 の生スコア
+  - primary_type
+  - secondary_types
+  - confidence
+  - center_dominance   # center_correction 適用後
+  - wing_tendency      # wing_correction 適用後
+  - corrections_applied

@@ -1,0 +1,37 @@
+# センター（三中心）補正
+# エニアグラムの三中心: 本能(Gut) / 感情(Heart) / 思考(Head)
+
+centers:
+  gut:
+    name: "本能センター"
+    types: [8, 9, 1]
+    core_emotion: "怒り・境界"
+  heart:
+    name: "感情センター"
+    types: [2, 3, 4]
+    core_emotion: "恥・承認"
+  head:
+    name: "思考センター"
+    types: [5, 6, 7]
+    core_emotion: "恐れ・不安"
+
+# 各センター内3タイプの合計スコアを算出し、最も高いセンターを dominant とする
+correction:
+  method: "sum_type_scores_by_center"
+  threshold_ratio: 0.55  # センター合計が全体の55%超なら strong_dominance
+
+  # 主タイプが dominant センター外にいる場合
+  cross_center_adjustment:
+    enabled: true
+    rule: |
+      主タイプが dominant センターに属さない場合、
+      そのセンター内最高スコアタイプを「センター整合候補」として副候補に追加。
+      confidence を 1 段階下げる（high→medium, medium→low）。
+
+output:
+  dominant_center: "gut | heart | head"
+  center_scores:
+    gut: 0
+    heart: 0
+    head: 0
+  center_aligned_candidate: null  # 整合候補タイプ（該当時のみ）

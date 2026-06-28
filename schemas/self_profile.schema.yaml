@@ -1,0 +1,45 @@
+# self_understanding 出力スキーマ
+
+type: object
+required:
+  - module
+  - type_result_ref
+  - values
+  - red_lines
+
+properties:
+  module:
+    const: self_understanding
+  type_result_ref:
+    description: "type_engine 出力への参照または primary_type"
+  fit_areas:
+    type: array
+    description: "診断結果でしっくり来た部分"
+  mismatch_areas:
+    type: array
+    description: "違和感のある部分"
+  values:
+    type: array
+    items:
+      type: string
+  red_lines:
+    type: array
+    description: "触れられたくない境界・譲れないもの"
+    items:
+      type: string
+  positive_cycles:
+    type: array
+    items:
+      type: object
+      properties:
+        trigger: { type: string }
+        behavior: { type: string }
+        outcome: { type: string }
+  negative_cycles:
+    type: array
+    items:
+      type: object
+      properties:
+        trigger: { type: string }
+        behavior: { type: string }
+        outcome: { type: string }

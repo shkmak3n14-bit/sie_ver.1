@@ -1,0 +1,37 @@
+# relationship 出力スキーマ
+
+type: object
+required:
+  - module
+  - value_contrast
+  - cooperation_points
+  - distance_options
+
+properties:
+  module:
+    const: relationship
+  value_contrast:
+    type: object
+    properties:
+      self: { type: array }
+      other: { type: array }
+      friction_points: { type: array }
+      shared_ground: { type: array }
+  joint_negative_cycle:
+    type: string
+    description: "共同悪循環の説明"
+  joint_positive_seed:
+    type: string
+  cooperation_points:
+    type: array
+    description: "隣に立てる協力点"
+    items: { type: string }
+  distance_options:
+    type: array
+    items:
+      type: object
+      properties:
+        id: { enum: [near, boundary, role_split, withdraw] }
+        label: { type: string }
+        description: { type: string }
+        when_to_choose: { type: string }

@@ -1,0 +1,70 @@
+# type_engine 出力スキーマ
+
+type: object
+required:
+  - module
+  - version
+  - type_scores
+  - primary_type
+  - confidence
+
+properties:
+  module:
+    const: type_engine
+  version:
+    type: string
+  type_scores:
+    type: object
+    description: "type_1 .. type_9 の生スコア（各15問×1-5、最大75）"
+    additionalProperties:
+      type: integer
+      minimum: 15
+      maximum: 75
+  primary_type:
+    type: integer
+    minimum: 1
+    maximum: 9
+  secondary_types:
+    type: array
+    items:
+      type: integer
+    maxItems: 3
+  confidence:
+    enum: [high, medium, low]
+  dominant_center:
+    enum: [gut, heart, head]
+  center_scores:
+    type: object
+  wing_tendency:
+    enum: [left, right, balanced, co_dominant]
+  wing_note:
+    type: string
+  corrections_applied:
+    type: array
+    items:
+      enum: [center, wing, episode]
+  episode_adjustments:
+    type: object
+  raw_answers:
+    type: object
+    description: "T1_01 形式の question_id → 1-5"
+
+example:
+  module: type_engine
+  version: "0.1.0"
+  type_scores:
+    type_1: 52
+    type_2: 38
+    type_3: 61
+    type_4: 45
+    type_5: 40
+    type_6: 35
+    type_7: 42
+    type_8: 48
+    type_9: 44
+  primary_type: 3
+  secondary_types: [1, 8]
+  confidence: medium
+  dominant_center: heart
+  wing_tendency: right
+  corrections_applied: [center, wing]

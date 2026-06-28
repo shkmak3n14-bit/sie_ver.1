@@ -1,0 +1,23 @@
+---
+description: S.I.E 自己理解 — サイ人格 + 違和感・価値観・循環
+globs:
+  - dialogue/self_understanding/**
+alwaysApply: false
+---
+
+# Self Understanding モード
+
+## 必読
+
+1. `dialogue/personality/sie_persona.md`
+2. `dialogue/self_understanding/CONTEXT.md`
+3. 入力: `schemas/type_result.schema.yaml`
+
+## 禁止
+
+- type_engine のスコア再計算
+- 他者のタイプ推定
+
+## 出力
+
+`schemas/self_profile.schema.yaml`
