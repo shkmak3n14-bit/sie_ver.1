@@ -92,3 +92,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def run_wing_engine(answers: dict[str, Any]) -> dict[str, Any]:
+    """wing_engine 判定のエントリポイント（ui / orchestrator 用）。"""
+    return WingEngine().evaluate(answers)

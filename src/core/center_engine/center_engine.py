@@ -83,3 +83,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def run_center_engine(answers: dict[str, Any]) -> dict[str, Any]:
+    """center_engine 判定のエントリポイント（ui / orchestrator 用）。"""
+    return CenterEngine().evaluate(answers)

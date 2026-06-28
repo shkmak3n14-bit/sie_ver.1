@@ -1,24 +1,20 @@
-# /src/ui
+# Streamlit UI 起動
 
-## 責務
+プロジェクトルートで実行:
 
-画面表示・入力処理。Web UI / CLI、選択肢表示、サイのメッセージ表示。
+```bash
+pip install -r requirements.txt
+streamlit run src/ui/main.py
+```
 
 ## 役割
 
-- **core と dialogue の唯一の接合点（Orchestrator）**
-- core の診断結果を dialogue に渡す
-- ユーザー入力を core / dialogue に振り分ける
+`main.py` は **司令塔（orchestrator）** のみ。
 
-## ファイル
+| 層 | 呼び出し |
+|----|---------|
+| core | `run_type_engine`, `run_center_engine`, `run_wing_engine`, `run_episode_engine` |
+| dialogue | `load_persona`, `load_flow` |
+| utils | `load_yaml_file`, `load_all_type_questions` |
 
-| ファイル | 内容 |
-|---------|------|
-| `ROLE.md` | 本ファイル |
-| `orchestrator.md` | core ↔ dialogue 橋渡し仕様 |
-| `cli.md` | CLI 仕様 |
-| `web.md` | Web UI 仕様 |
-
-## 依存
-
-- **参照可**: `src/core/`, `src/dialogue/`, `src/utils/`, `config/`, `data/`
+ロジック本体は core / dialogue に分離したまま。

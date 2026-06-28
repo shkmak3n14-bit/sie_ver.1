@@ -311,3 +311,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def run_type_engine(answers: dict[str, Any]) -> dict[str, Any]:
+    """type_engine 統合診断のエントリポイント（ui / orchestrator 用）。"""
+    return TypeEngine().run(answers)
