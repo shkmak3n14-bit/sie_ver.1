@@ -1,0 +1,45 @@
+# type_engine 評価パイプライン
+
+version: "0.1.0"
+
+steps:
+  - id: score_types
+    module: scoring
+    config: "../scoring/scoring.yaml"
+    input: answers
+    output: type_scores
+
+  - id: extract_candidates
+    module: type_engine
+    input: type_scores
+    output: type_candidates  # top 3
+
+  - id: center_correction
+    module: center_engine
+    config: "../scoring/scoring.yaml#center_adjustment"
+    input: [type_scores, center_answers]
+    output: center_adjusted_scores
+    note: "センターを先に決めない — 補正のみ"
+
+  - id: wing_correction
+    module: wing_engine
+    config: "../scoring/scoring.yaml#wing_adjustment"
+    input: [primary_candidate, wing_answers]
+    output: wing_result
+    requires: primary_candidate
+
+  - id: episode_correction
+    module: episode_analysis
+    config: "../scoring/scoring.yaml#episode_adjustment"
+    input: episodes
+    optional: true
+    output: episode_adjustments
+
+  - id: finalize
+    module: type_engine
+    config: "../scoring/scoring.yaml#final_decision"
+    output: final_type
+
+output:
+  type_candidates: 3
+  fields: [primary_type, wing, dominant_center, confidence]

@@ -1,0 +1,88 @@
+meta:
+  version: "0.2.0"
+  template: dialogue.file
+  phase: self_understanding
+  description: "自己理解 — 違和感チェック・価値観・好悪循環・気遣い"
+  deep_dive_threshold: 3
+
+flow:
+  - id: flow_self_001
+    speaker: SIE
+    text: "診断が終わった。ここからは結果を“正解”として扱わない。まず、君の感覚を聞かせてほしい。"
+    type: message
+    options: null
+    next: flow_self_002
+
+  - id: flow_self_002
+    speaker: SIE
+    text: "まずは診断結果を見て、違和感がないか教えてほしい。しっくり来た部分と、ピンとこない部分、両方あっていい。"
+    type: question
+    options:
+      - "ほとんど合っている"
+      - "半分くらい合っている"
+      - "あまり合っていない"
+      - "ほとんど合っていない"
+    next: flow_self_003
+    tags: [mismatch_check, deep_dive]
+
+  - id: flow_self_003
+    speaker: SIE
+    text: "別の見方を一つ提案していい？ 違和感の部分こそ、君が譲れないものの手がかりになることが多い。"
+    type: suggestion
+    options: null
+    next: flow_self_004
+
+  - id: flow_self_004
+    speaker: SIE
+    text: "君が大切にしているものは何だろう？ 安心？ 自由？ 評価？ 正しさ？ 当てはまるものを選んで、なければ言葉で教えてほしい。"
+    type: question
+    options:
+      - "安心・安全"
+      - "自由・選択肢"
+      - "評価・成果"
+      - "正しさ・誠実さ"
+      - "関係・つながり"
+      - "その他（自由記述）"
+    next: flow_self_005
+    tags: [values, deep_dive]
+
+  - id: flow_self_005
+    speaker: SIE
+    text: "調子がいいときの君は、どんなふうに周りと関わっている？ 具体的な場面が一つ思い浮かぶと、はっきりする。"
+    type: question
+    options: null
+    next: flow_self_006
+    tags: [positive_cycle, deep_dive]
+
+  - id: flow_self_006
+    speaker: SIE
+    text: "ここまで結構深く入ったね。少し休む？ 無理に続けなくていい。"
+    type: suggestion
+    options:
+      - "続ける"
+      - "少し休む"
+    next: flow_self_007
+    tags: [care, rest_prompt]
+
+  - id: flow_self_007
+    speaker: SIE
+    text: "逆に、しんどいときはどんなパターンが出る？ 同じ場面が繰り返されるなら、それが悪循環の入口かもしれない。"
+    type: question
+    options: null
+    next: flow_self_008
+    tags: [negative_cycle]
+
+  - id: flow_self_008
+    speaker: SIE
+    text: "ちなみに、私に“しんどさ”はない。羨ましいと言われることがある。…冗談だ。君のペースが正解だ。"
+    type: message
+    options: null
+    next: flow_self_009
+    tags: [humor]
+
+  - id: flow_self_009
+    speaker: SIE
+    text: "違和感・大切なもの・好循環・悪循環。ここまでが自己理解の土台だ。次は、理解したい相手の話に移れる。"
+    type: message
+    options: null
+    next: null

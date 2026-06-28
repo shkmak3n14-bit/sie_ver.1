@@ -1,0 +1,5 @@
+# サイ（S.I.E）人格設定 — 後方互換
+# マスタ: persona.yaml
+
+reference: persona.yaml
+deprecated: true

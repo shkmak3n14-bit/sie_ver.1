@@ -1,0 +1,12 @@
+meta:
+  type: 4
+  wing: 3
+  label: "4w3"
+  name: "個性を求める人（成功ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

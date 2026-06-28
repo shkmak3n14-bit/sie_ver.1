@@ -1,0 +1,14 @@
+# センター補正ルール
+# センターを先に決めず、タイプスコアへの補正として適用
+
+version: "0.1.0"
+
+method: adjust_not_decide_first
+
+correction:
+  cross_center_threshold: 0.55
+  confidence_penalty: 1  # high→medium, medium→low
+
+output:
+  dominant_center: null
+  center_aligned_candidate: null

@@ -1,0 +1,5 @@
+# ユーザー回答データはリポジトリに含めない
+*
+!.gitignore
+!ROLE.md
+!.gitkeep

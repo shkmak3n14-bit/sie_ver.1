@@ -1,0 +1,10 @@
+# 質問セット読み込み順
+
+reference: "src/core/questions/index.yaml"
+
+load_order:
+  - types
+  - center
+  - wing
+
+batch_size: 5

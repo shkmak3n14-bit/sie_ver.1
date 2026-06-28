@@ -1,0 +1,44 @@
+# =============================================================================
+# w判定質問テンプレート — wing.yaml（18種類）
+# =============================================================================
+# タイプ確定後に wing_engine が参照
+# type_number: "1w9", "1w2", "2w1" ... "9w1" 形式
+# =============================================================================
+
+meta:
+  version: "0.2.0"
+  template: question.wing
+  category: wing
+  question_count: 18            # 各 w 組み合わせ1問 × 18
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: W_1w9
+    category: wing
+    type_number: "1w9"
+    text: "正しさより、まず関係の平和を選びたい"
+    options: null
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type1", "wing9"]
+    next: null
+
+  - id: W_1w2
+    category: wing
+    type_number: "1w2"
+    text: "正しいことをするために、人の役に立ちたい"
+    options: null
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 1.0 }
+    tags: ["wing", "type1", "wing2"]
+    next: null
+
+  # ... 2w1, 2w3, 3w2, 3w4, 4w3, 4w5, 5w4, 5w6,
+  #     6w5, 6w7, 7w6, 7w8, 8w7, 8w9, 9w8, 9w1 まで同形式

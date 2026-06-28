@@ -1,0 +1,62 @@
+# =============================================================================
+# 対話フローテンプレート（ファイル単位）
+# =============================================================================
+# 用途: src/dialogue/flow/*.yaml
+# 導入・自己理解・他者理解・相互理解フェーズ
+# 診断質問とは別形式だが、同一 templates ディレクトリで管理
+# =============================================================================
+
+meta:
+  version: "0.2.0"
+  template: dialogue.file
+  phase: intro                  # intro | self_understanding | other_understanding | relationship
+  speaker: SIE
+
+flow:
+  # ---------------------------------------------------------------------------
+  # 対話1件分 — 以下をコピーして flow 配列に追加
+  # ---------------------------------------------------------------------------
+  - id: intro_001
+    speaker: SIE
+    text: "やあ、サイだよ。今日はエニアグラムを使って、君のパターンを一緒に見ていこう。"
+    type: message               # message | question | suggestion
+    options: null               # message/suggestion は null、question は選択肢配列
+    next: intro_002
+
+  - id: intro_002
+    speaker: SIE
+    text: "準備はいい？ では始めよう。"
+    type: message
+    options: null
+    next: intro_003
+
+  - id: self_001
+    speaker: SIE
+    text: "診断結果のうち、しっくり来た部分と違和感のある部分、どこだろう？"
+    type: question
+    options:
+      - "ほとんど合っている"
+      - "半分くらい合っている"
+      - "あまり合っていない"
+      - "ほとんど合っていない"
+    next: self_002
+    tags:
+      - "self_understanding"
+      - "mismatch_check"
+
+  - id: self_002
+    speaker: SIE
+    text: "別の見方を一つ提案していい？"
+    type: suggestion
+    options: null
+    next: null
+    tags:
+      - "reframe"
+
+  # --- 拡張（任意） ---
+  # branch:
+  #   condition: "answer == 0"
+  #   true_next: self_003a
+  #   false_next: self_003b
+  # deep_dive_count: 0          # 3回で休憩提案（persona 連動）
+  # template_ref: "prompts.reframe"  # src/dialogue/templates/ 参照

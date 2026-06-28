@@ -1,0 +1,15 @@
+# 三中心定義
+
+centers:
+  gut:
+    name: "本能センター"
+    types: [8, 9, 1]
+    core_emotion: "怒り・境界"
+  heart:
+    name: "感情センター"
+    types: [2, 3, 4]
+    core_emotion: "恥・承認"
+  head:
+    name: "思考センター"
+    types: [5, 6, 7]
+    core_emotion: "恐れ・不安"

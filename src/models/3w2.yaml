@@ -1,0 +1,12 @@
+meta:
+  type: 3
+  wing: 2
+  label: "3w2"
+  name: "成功を目指す人（奉仕ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

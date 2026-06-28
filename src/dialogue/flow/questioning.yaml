@@ -1,0 +1,9 @@
+# 質問の出し方
+
+phase: questioning
+version: "0.1.0"
+
+batch_size: 5
+show_scale_labels: true
+
+steps: []

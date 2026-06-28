@@ -1,0 +1,12 @@
+meta:
+  type: 9
+  wing: 1
+  label: "9w1"
+  name: "平和を求める人（改革ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

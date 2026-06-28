@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.center
+  category: center
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  # --- 本能センター（Instinct）5問 ---
+  - id: center_q01
+    category: center
+    type_number: instinct
+    text: "イラッとしたとき、まず体が反応する（表情・声・動きなど）。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["gut", "instinct", "body"]
+    next: null
+
+  - id: center_q02
+    category: center
+    type_number: instinct
+    text: "直感で動くことが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["gut", "instinct", "behavior"]
+    next: null
+
+  - id: center_q03
+    category: center
+    type_number: instinct
+    text: "体の緊張や違和感に敏感だ。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["gut", "instinct", "body"]
+    next: null
+
+  - id: center_q04
+    category: center
+    type_number: instinct
+    text: "行動が先に出て、後から理由を考えることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["gut", "instinct", "behavior"]
+    next: null
+
+  - id: center_q05
+    category: center
+    type_number: instinct
+    text: "反射的に動いてしまう場面が多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["gut", "instinct", "behavior"]
+    next: null
+
+  # --- 思考センター（Thinking）5問 ---
+  - id: center_q06
+    category: center
+    type_number: thinking
+    text: "不安になると、頭の中でシミュレーションが止まらなくなる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["head", "thinking", "fear"]
+    next: null
+
+  - id: center_q07
+    category: center
+    type_number: thinking
+    text: "まず「どうするか」を考えてから動く。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["head", "thinking", "behavior"]
+    next: null
+
+  - id: center_q08
+    category: center
+    type_number: thinking
+    text: "情報が揃わないと落ち着かない。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["head", "thinking", "fear"]
+    next: null
+
+  - id: center_q09
+    category: center
+    type_number: thinking
+    text: "未来のリスクを考える癖がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["head", "thinking", "fear"]
+    next: null
+
+  - id: center_q10
+    category: center
+    type_number: thinking
+    text: "行動よりも計画を優先する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["head", "thinking", "behavior"]
+    next: null
+
+  # --- 感情センター（Feeling）5問 ---
+  - id: center_q11
+    category: center
+    type_number: feeling
+    text: "人からどう見られているかが気になりやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["heart", "feeling", "recognition"]
+    next: null
+
+  - id: center_q12
+    category: center
+    type_number: feeling
+    text: "感情が行動に影響しやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["heart", "feeling", "emotion"]
+    next: null
+
+  - id: center_q13
+    category: center
+    type_number: feeling
+    text: "相手の気持ちを察しようとする癖がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["heart", "feeling", "relationship"]
+    next: null
+
+  - id: center_q14
+    category: center
+    type_number: feeling
+    text: "自分の感情が強く出ることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["heart", "feeling", "emotion"]
+    next: null
+
+  - id: center_q15
+    category: center
+    type_number: feeling
+    text: "関係性の変化に敏感だ。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 1.2, defense: 0.8 }
+    tags: ["heart", "feeling", "relationship"]
+    next: null

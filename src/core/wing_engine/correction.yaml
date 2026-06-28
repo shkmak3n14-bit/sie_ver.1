@@ -1,0 +1,13 @@
+# w 補正ルール — タイプ確定後に適用
+
+version: "0.1.0"
+
+requires: primary_type
+
+correction:
+  balanced_threshold: 2
+  strong_wing_threshold: 5
+
+output:
+  wing_tendency: null  # left | right | balanced | co_dominant
+  wing_label: null     # 例: 3w2

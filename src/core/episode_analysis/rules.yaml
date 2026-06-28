@@ -1,0 +1,18 @@
+# エピソード解析ルール
+
+version: "0.1.0"
+
+input:
+  min_episodes: 0
+  max_episodes: 5
+  questions_file: "../questions/episode_analysis.yaml"
+  fields: [situation, behavior, emotion, motivation, outcome]
+
+correction:
+  max_adjustment_per_type: 6
+  max_total_adjustment: 15
+  optional: true
+
+output:
+  episode_adjustments: {}
+  patterns: []

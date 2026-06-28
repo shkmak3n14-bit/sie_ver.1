@@ -1,0 +1,36 @@
+# 質問データテンプレート v0.2.0
+# 詳細: docs/yaml-template-spec.md
+# 原子テンプレート: src/templates/question.item.template.yaml
+# ファイルテンプレート: src/templates/question.template.yaml
+
+meta:
+  version: "0.2.0"
+  template: question.file
+  category: type              # type | center | wing
+  type_number: null           # type: 1-9 | center: instinct/thinking/feeling | wing: "1w9"
+  type_name: ""
+  question_count: 0
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: q001
+    category: type
+    type_number: 1
+    text: "ここに質問文を入れる"
+    options: null
+    weight:
+      core: 1.0
+      fear: 1.0
+      desire: 1.0
+      defense: 1.0
+    tags: []
+    next: null

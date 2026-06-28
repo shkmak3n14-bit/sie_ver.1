@@ -1,0 +1,12 @@
+meta:
+  type: 8
+  wing: 7
+  label: "8w7"
+  name: "挑戦する人（熱中ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

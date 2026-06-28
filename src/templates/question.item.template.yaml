@@ -1,0 +1,34 @@
+# =============================================================================
+# S.I.E 統一質問テンプレート（1問分・原子テンプレート）
+# =============================================================================
+# 用途: 単一質問のコピー＆ペースト用
+# type1〜9 / center / wing / dialogue すべてこの形式に従う
+# =============================================================================
+
+id: q001
+category: type                  # type | center | wing | dialogue
+type_number: 1                  # type: 1〜9 | center: instinct/thinking/feeling | wing: "1w9"
+text: "ここに質問文を入れる"
+options:
+  - "ほとんどない"
+  - "たまにある"
+  - "よくある"
+  - "ほぼいつもそう"
+weight:
+  core: 1.0                     # 核心動機
+  fear: 1.0                     # 恐れ
+  desire: 1.0                   # 欲求
+  defense: 1.0                  # 防衛パターン
+tags:
+  - "self"
+  - "childhood"
+  - "emotion"
+next: null                      # 次の質問ID（分岐がある場合のみ使用）
+
+# --- 拡張（任意） ---
+reverse_scored: false
+required: true
+branch:
+  condition: null
+  true_next: null
+  false_next: null

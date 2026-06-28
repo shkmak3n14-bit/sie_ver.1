@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 8
+  type_name: "挑戦する人"
+  center: gut
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type8_q01
+    category: type
+    type_number: 8
+    text: "自分の弱さを見せたくない。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "fear"]
+    next: null
+
+  - id: type8_q02
+    category: type
+    type_number: 8
+    text: "強くありたいという願望がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null
+
+  - id: type8_q03
+    category: type
+    type_number: 8
+    text: "他人に支配されるのが嫌い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["other", "fear"]
+    next: null
+
+  - id: type8_q04
+    category: type
+    type_number: 8
+    text: "自分の意見をはっきり言う。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type8_q05
+    category: type
+    type_number: 8
+    text: "不正を見ると怒りが湧く。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["other", "emotion"]
+    next: null
+
+  - id: type8_q06
+    category: type
+    type_number: 8
+    text: "弱い立場の人を守りたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["other", "desire"]
+    next: null
+
+  - id: type8_q07
+    category: type
+    type_number: 8
+    text: "コントロールされると反発したくなる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "fear"]
+    next: null
+
+  - id: type8_q08
+    category: type
+    type_number: 8
+    text: "直感で動くことが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 0.8 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type8_q09
+    category: type
+    type_number: 8
+    text: "自分の力を試したくなる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type8_q10
+    category: type
+    type_number: 8
+    text: "感情が強く出ることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["self", "emotion", "behavior"]
+    next: null
+
+  - id: type8_q11
+    category: type
+    type_number: 8
+    text: "率直な人が好き。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["other", "core"]
+    next: null
+
+  - id: type8_q12
+    category: type
+    type_number: 8
+    text: "自分の領域を守りたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type8_q13
+    category: type
+    type_number: 8
+    text: "他人の本音を見抜こうとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["other", "defense", "behavior"]
+    next: null
+
+  - id: type8_q14
+    category: type
+    type_number: 8
+    text: "自分の道を切り開きたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type8_q15
+    category: type
+    type_number: 8
+    text: "強さが自分の価値だと感じる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null

@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 1
+  type_name: "改革する人"
+  center: gut
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type1_q01
+    category: type
+    type_number: 1
+    text: "自分の中に「正しくありたい」という強い基準がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type1_q02
+    category: type
+    type_number: 1
+    text: "間違いを見つけると、自然と気になってしまう。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type1_q03
+    category: type
+    type_number: 1
+    text: "自分にも他人にも厳しくなることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type1_q04
+    category: type
+    type_number: 1
+    text: "「もっと良くできるはずだ」と思う場面が多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type1_q05
+    category: type
+    type_number: 1
+    text: "感情よりも「正しさ」を優先することがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type1_q06
+    category: type
+    type_number: 1
+    text: "怠けていると感じると、自分に腹が立つ。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type1_q07
+    category: type
+    type_number: 1
+    text: "ルールや秩序が乱れるとストレスを感じる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type1_q08
+    category: type
+    type_number: 1
+    text: "人から「真面目だね」と言われることが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type1_q09
+    category: type
+    type_number: 1
+    text: "自分の怒りを抑え込む傾向がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type1_q10
+    category: type
+    type_number: 1
+    text: "完璧にできないと、満足しにくい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type1_q11
+    category: type
+    type_number: 1
+    text: "他人の行動に「もっとこうすればいいのに」と思う。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["other", "desire"]
+    next: null
+
+  - id: type1_q12
+    category: type
+    type_number: 1
+    text: "自分の欠点を改善しようと努力する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type1_q13
+    category: type
+    type_number: 1
+    text: "仕事や家事の手抜きが気になる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["other", "defense"]
+    next: null
+
+  - id: type1_q14
+    category: type
+    type_number: 1
+    text: "自分の感情を「未熟」と感じて抑えることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type1_q15
+    category: type
+    type_number: 1
+    text: "「正しく生きたい」という願望が強い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null

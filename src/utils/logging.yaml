@@ -1,0 +1,4 @@
+# ログ設定参照
+
+level: info
+format: json

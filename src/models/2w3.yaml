@@ -1,0 +1,12 @@
+meta:
+  type: 2
+  wing: 3
+  label: "2w3"
+  name: "奉仕する人（成功ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

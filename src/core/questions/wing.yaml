@@ -1,0 +1,737 @@
+meta:
+  version: "0.2.0"
+  template: question.wing
+  category: wing
+  question_count: 54
+  wing_count: 18
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  # --- 1w9 ---
+  - id: wing_q01
+    category: wing
+    type_number: "1w9"
+    text: "正しさを求めつつ、穏やかでいたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type1", "wing9"]
+    next: null
+
+  - id: wing_q02
+    category: wing
+    type_number: "1w9"
+    text: "怒りを抑え込みやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type1", "wing9"]
+    next: null
+
+  - id: wing_q03
+    category: wing
+    type_number: "1w9"
+    text: "静かに改善しようとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type1", "wing9"]
+    next: null
+
+  # --- 1w2 ---
+  - id: wing_q04
+    category: wing
+    type_number: "1w2"
+    text: "正しさと同時に、人の役に立ちたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type1", "wing2"]
+    next: null
+
+  - id: wing_q05
+    category: wing
+    type_number: "1w2"
+    text: "他人のために頑張りすぎることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type1", "wing2"]
+    next: null
+
+  - id: wing_q06
+    category: wing
+    type_number: "1w2"
+    text: "厳しさと優しさが混ざる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type1", "wing2"]
+    next: null
+
+  # --- 2w1 ---
+  - id: wing_q07
+    category: wing
+    type_number: "2w1"
+    text: "人を助けたい気持ちと、正しくありたい気持ちが両方ある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type2", "wing1"]
+    next: null
+
+  - id: wing_q08
+    category: wing
+    type_number: "2w1"
+    text: "自分に厳しくなることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type2", "wing1"]
+    next: null
+
+  - id: wing_q09
+    category: wing
+    type_number: "2w1"
+    text: "相手のために「正しい行動」を選びやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type2", "wing1"]
+    next: null
+
+  # --- 2w3 ---
+  - id: wing_q10
+    category: wing
+    type_number: "2w3"
+    text: "人を助けたい気持ちと、評価されたい気持ちが両方ある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type2", "wing3"]
+    next: null
+
+  - id: wing_q11
+    category: wing
+    type_number: "2w3"
+    text: "明るく振る舞うことが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type2", "wing3"]
+    next: null
+
+  - id: wing_q12
+    category: wing
+    type_number: "2w3"
+    text: "人からの反応に敏感。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type2", "wing3"]
+    next: null
+
+  # --- 3w2 ---
+  - id: wing_q13
+    category: wing
+    type_number: "3w2"
+    text: "成果を出したい気持ちと、人の役に立ちたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type3", "wing2"]
+    next: null
+
+  - id: wing_q14
+    category: wing
+    type_number: "3w2"
+    text: "明るく社交的に振る舞う。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type3", "wing2"]
+    next: null
+
+  - id: wing_q15
+    category: wing
+    type_number: "3w2"
+    text: "努力を見せたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type3", "wing2"]
+    next: null
+
+  # --- 3w4 ---
+  - id: wing_q16
+    category: wing
+    type_number: "3w4"
+    text: "成果を出したい気持ちと、個性を大事にしたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type3", "wing4"]
+    next: null
+
+  - id: wing_q17
+    category: wing
+    type_number: "3w4"
+    text: "感情が揺れやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type3", "wing4"]
+    next: null
+
+  - id: wing_q18
+    category: wing
+    type_number: "3w4"
+    text: "自分の内面を気にする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type3", "wing4"]
+    next: null
+
+  # --- 4w3 ---
+  - id: wing_q19
+    category: wing
+    type_number: "4w3"
+    text: "個性を大事にしつつ、成果も求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type4", "wing3"]
+    next: null
+
+  - id: wing_q20
+    category: wing
+    type_number: "4w3"
+    text: "感情表現が豊か。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type4", "wing3"]
+    next: null
+
+  - id: wing_q21
+    category: wing
+    type_number: "4w3"
+    text: "自分を良く見せたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type4", "wing3"]
+    next: null
+
+  # --- 4w5 ---
+  - id: wing_q22
+    category: wing
+    type_number: "4w5"
+    text: "個性を大事にしつつ、深い理解を求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type4", "wing5"]
+    next: null
+
+  - id: wing_q23
+    category: wing
+    type_number: "4w5"
+    text: "一人の時間が必要。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type4", "wing5"]
+    next: null
+
+  - id: wing_q24
+    category: wing
+    type_number: "4w5"
+    text: "感情と知性が混ざる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type4", "wing5"]
+    next: null
+
+  # --- 5w4 ---
+  - id: wing_q25
+    category: wing
+    type_number: "5w4"
+    text: "理解を求めつつ、感情の深さもある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type5", "wing4"]
+    next: null
+
+  - id: wing_q26
+    category: wing
+    type_number: "5w4"
+    text: "内面世界が豊か。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type5", "wing4"]
+    next: null
+
+  - id: wing_q27
+    category: wing
+    type_number: "5w4"
+    text: "感情が揺れやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type5", "wing4"]
+    next: null
+
+  # --- 5w6 ---
+  - id: wing_q28
+    category: wing
+    type_number: "5w6"
+    text: "理解を求めつつ、不安にも敏感。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type5", "wing6"]
+    next: null
+
+  - id: wing_q29
+    category: wing
+    type_number: "5w6"
+    text: "慎重に行動する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type5", "wing6"]
+    next: null
+
+  - id: wing_q30
+    category: wing
+    type_number: "5w6"
+    text: "情報を集める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type5", "wing6"]
+    next: null
+
+  # --- 6w5 ---
+  - id: wing_q31
+    category: wing
+    type_number: "6w5"
+    text: "不安に敏感で、理解を求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type6", "wing5"]
+    next: null
+
+  - id: wing_q32
+    category: wing
+    type_number: "6w5"
+    text: "深く考えすぎることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type6", "wing5"]
+    next: null
+
+  - id: wing_q33
+    category: wing
+    type_number: "6w5"
+    text: "一人で準備したい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type6", "wing5"]
+    next: null
+
+  # --- 6w7 ---
+  - id: wing_q34
+    category: wing
+    type_number: "6w7"
+    text: "不安に敏感だが、明るく振る舞おうとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type6", "wing7"]
+    next: null
+
+  - id: wing_q35
+    category: wing
+    type_number: "6w7"
+    text: "楽しいことを求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type6", "wing7"]
+    next: null
+
+  - id: wing_q36
+    category: wing
+    type_number: "6w7"
+    text: "気分が揺れやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type6", "wing7"]
+    next: null
+
+  # --- 7w6 ---
+  - id: wing_q37
+    category: wing
+    type_number: "7w6"
+    text: "楽しいことを求めつつ、不安にも敏感。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type7", "wing6"]
+    next: null
+
+  - id: wing_q38
+    category: wing
+    type_number: "7w6"
+    text: "計画を立てることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type7", "wing6"]
+    next: null
+
+  - id: wing_q39
+    category: wing
+    type_number: "7w6"
+    text: "選択肢を増やしたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type7", "wing6"]
+    next: null
+
+  # --- 7w8 ---
+  - id: wing_q40
+    category: wing
+    type_number: "7w8"
+    text: "楽しいことを求めつつ、強さも求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type7", "wing8"]
+    next: null
+
+  - id: wing_q41
+    category: wing
+    type_number: "7w8"
+    text: "行動力がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type7", "wing8"]
+    next: null
+
+  - id: wing_q42
+    category: wing
+    type_number: "7w8"
+    text: "直感で動く。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type7", "wing8"]
+    next: null
+
+  # --- 8w7 ---
+  - id: wing_q43
+    category: wing
+    type_number: "8w7"
+    text: "強さを求めつつ、楽しさも求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type8", "wing7"]
+    next: null
+
+  - id: wing_q44
+    category: wing
+    type_number: "8w7"
+    text: "行動力が高い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type8", "wing7"]
+    next: null
+
+  - id: wing_q45
+    category: wing
+    type_number: "8w7"
+    text: "感情が強く出る。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type8", "wing7"]
+    next: null
+
+  # --- 8w9 ---
+  - id: wing_q46
+    category: wing
+    type_number: "8w9"
+    text: "強さを求めつつ、穏やかでいたい気持ちがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type8", "wing9"]
+    next: null
+
+  - id: wing_q47
+    category: wing
+    type_number: "8w9"
+    text: "怒りを抑え込むことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type8", "wing9"]
+    next: null
+
+  - id: wing_q48
+    category: wing
+    type_number: "8w9"
+    text: "静かに支配しようとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type8", "wing9"]
+    next: null
+
+  # --- 9w8 ---
+  - id: wing_q49
+    category: wing
+    type_number: "9w8"
+    text: "穏やかでいたいが、強さも求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type9", "wing8"]
+    next: null
+
+  - id: wing_q50
+    category: wing
+    type_number: "9w8"
+    text: "行動力が出るときがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type9", "wing8"]
+    next: null
+
+  - id: wing_q51
+    category: wing
+    type_number: "9w8"
+    text: "自分の意見を押し出す場面がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type9", "wing8"]
+    next: null
+
+  # --- 9w1 ---
+  - id: wing_q52
+    category: wing
+    type_number: "9w1"
+    text: "穏やかでいたいが、正しさも求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["wing", "type9", "wing1"]
+    next: null
+
+  - id: wing_q53
+    category: wing
+    type_number: "9w1"
+    text: "自分に厳しくなることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["wing", "type9", "wing1"]
+    next: null
+
+  - id: wing_q54
+    category: wing
+    type_number: "9w1"
+    text: "静かに改善しようとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.0 }
+    tags: ["wing", "type9", "wing1"]
+    next: null

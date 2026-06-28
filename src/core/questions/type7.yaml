@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 7
+  type_name: "熱中する人"
+  center: head
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type7_q01
+    category: type
+    type_number: 7
+    text: "楽しいことを求める気持ちが強い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null
+
+  - id: type7_q02
+    category: type
+    type_number: 7
+    text: "退屈が苦手。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type7_q03
+    category: type
+    type_number: 7
+    text: "新しいアイデアが次々と浮かぶ。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type7_q04
+    category: type
+    type_number: 7
+    text: "ネガティブな感情を避けたくなる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type7_q05
+    category: type
+    type_number: 7
+    text: "自由でいたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type7_q06
+    category: type
+    type_number: 7
+    text: "未来の可能性を考えるのが好き。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null
+
+  - id: type7_q07
+    category: type
+    type_number: 7
+    text: "何かを始めるのが得意。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "behavior"]
+    next: null
+
+  - id: type7_q08
+    category: type
+    type_number: 7
+    text: "途中で飽きることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "behavior"]
+    next: null
+
+  - id: type7_q09
+    category: type
+    type_number: 7
+    text: "制限されるとストレス。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type7_q10
+    category: type
+    type_number: 7
+    text: "人を楽しませるのが好き。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["other", "desire"]
+    next: null
+
+  - id: type7_q11
+    category: type
+    type_number: 7
+    text: "つらい感情を軽く扱うことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type7_q12
+    category: type
+    type_number: 7
+    text: "選択肢が多いほど嬉しい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type7_q13
+    category: type
+    type_number: 7
+    text: "何かを失うことが怖い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type7_q14
+    category: type
+    type_number: 7
+    text: "自分の感情をポジティブに変換しようとする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type7_q15
+    category: type
+    type_number: 7
+    text: "未来に希望を感じたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null

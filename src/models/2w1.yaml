@@ -1,0 +1,12 @@
+meta:
+  type: 2
+  wing: 1
+  label: "2w1"
+  name: "奉仕する人（改革ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

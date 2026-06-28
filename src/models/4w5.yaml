@@ -1,0 +1,12 @@
+meta:
+  type: 4
+  wing: 5
+  label: "4w5"
+  name: "個性を求める人（調査ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

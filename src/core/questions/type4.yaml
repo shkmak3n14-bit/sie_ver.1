@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 4
+  type_name: "個性を求める人"
+  center: heart
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type4_q01
+    category: type
+    type_number: 4
+    text: "自分は他の人と違うと感じることが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type4_q02
+    category: type
+    type_number: 4
+    text: "感情が深く、揺れやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 0.8 }
+    tags: ["self", "core", "emotion"]
+    next: null
+
+  - id: type4_q03
+    category: type
+    type_number: 4
+    text: "本物でありたいという願望が強い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type4_q04
+    category: type
+    type_number: 4
+    text: "自分の内面を大事にする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type4_q05
+    category: type
+    type_number: 4
+    text: "理想の自分と現実の自分のギャップに苦しむことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear", "emotion"]
+    next: null
+
+  - id: type4_q06
+    category: type
+    type_number: 4
+    text: "特別な存在でいたい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type4_q07
+    category: type
+    type_number: 4
+    text: "感情を表現することが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["self", "emotion", "behavior"]
+    next: null
+
+  - id: type4_q08
+    category: type
+    type_number: 4
+    text: "自分の欠けている部分に目が向きやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type4_q09
+    category: type
+    type_number: 4
+    text: "他人と比較して落ち込むことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["other", "fear", "emotion"]
+    next: null
+
+  - id: type4_q10
+    category: type
+    type_number: 4
+    text: "美しさや雰囲気に敏感。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type4_q11
+    category: type
+    type_number: 4
+    text: "深い関係を求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["relationship", "desire"]
+    next: null
+
+  - id: type4_q12
+    category: type
+    type_number: 4
+    text: "平凡になることが怖い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type4_q13
+    category: type
+    type_number: 4
+    text: "感情が強く、言葉にしにくいことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type4_q14
+    category: type
+    type_number: 4
+    text: "自分の世界観を大事にする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type4_q15
+    category: type
+    type_number: 4
+    text: "感情の波が創造性につながる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire", "emotion"]
+    next: null

@@ -1,0 +1,9 @@
+# 挨拶・導入テンプレート
+
+greetings:
+  default: "やあ、サイだよ。"
+  formal: "ごきげんよう、{name}さん。"
+  resume: "サイだ。続きを聞かせて。"
+
+farewell:
+  default: "また必要になったら、声をかけて。"

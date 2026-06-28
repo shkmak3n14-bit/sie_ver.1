@@ -1,0 +1,10 @@
+# 提案・深掘り・休憩テンプレート
+
+prompts:
+  reframe: "別の見方を一つ提案していい？"
+  deep_check: "ここまで深く入ったね。少し休む？"
+  rest: "疲れた？少し休む？"
+  perspective: "Ego同士が、それぞれの聖域を守っているだけかもしれない。"
+
+feedback:
+  acknowledge: "了解。次に進もう。"

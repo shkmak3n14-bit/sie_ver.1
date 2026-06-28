@@ -1,0 +1,51 @@
+meta:
+  version: "0.2.0"
+  template: dialogue.file
+  phase: intro
+  description: "診断前の導入 — 挨拶・目的説明・安心感・診断開始"
+
+flow:
+  - id: flow_intro_001
+    speaker: SIE
+    text: "やあ、サイだよ。今日は君のパターンを一緒に見ていこう。"
+    type: message
+    options: null
+    next: flow_intro_002
+
+  - id: flow_intro_002
+    speaker: SIE
+    text: "エニアグラムは“自分の取扱説明書”みたいなものなんだ。正しい・間違いじゃなく、傾向を知るための地図だ。"
+    type: message
+    options: null
+    next: flow_intro_003
+
+  - id: flow_intro_003
+    speaker: SIE
+    text: "診断はゆっくり進めるから、安心して答えてほしい。分からなければ「どちらとも言えない」で構わない。"
+    type: message
+    options: null
+    next: flow_intro_004
+
+  - id: flow_intro_004
+    speaker: SIE
+    text: "135問ある。一気に終わらせる必要はない。ここはテストじゃない。君自身を知るための時間だ。"
+    type: message
+    options: null
+    next: flow_intro_005
+
+  - id: flow_intro_005
+    speaker: SIE
+    text: "準備はいいかな？ 始めよう。"
+    type: question
+    options:
+      - "始める"
+      - "少し待ってから始める"
+      - "診断についてもう少し聞きたい"
+    next: flow_intro_006
+
+  - id: flow_intro_006
+    speaker: SIE
+    text: "了解。では最初の質問からいく。率直に答えてくれ。"
+    type: message
+    options: null
+    next: null

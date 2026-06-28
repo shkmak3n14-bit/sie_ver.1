@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 2
+  type_name: "助ける人"
+  center: heart
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type2_q01
+    category: type
+    type_number: 2
+    text: "困っている人を見ると、自然と手を差し伸べたくなる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null
+
+  - id: type2_q02
+    category: type
+    type_number: 2
+    text: "人から「ありがとう」と言われると嬉しい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type2_q03
+    category: type
+    type_number: 2
+    text: "自分の欲求より他人の気持ちを優先しがち。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type2_q04
+    category: type
+    type_number: 2
+    text: "人に必要とされることが大事だと感じる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null
+
+  - id: type2_q05
+    category: type
+    type_number: 2
+    text: "相手の気持ちを察しようとする癖がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["other", "core"]
+    next: null
+
+  - id: type2_q06
+    category: type
+    type_number: 2
+    text: "自分のことを後回しにしてしまう。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 1.0, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type2_q07
+    category: type
+    type_number: 2
+    text: "人の役に立てないと不安になることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type2_q08
+    category: type
+    type_number: 2
+    text: "相手の喜びが自分の喜びになる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core", "emotion"]
+    next: null
+
+  - id: type2_q09
+    category: type
+    type_number: 2
+    text: "自分の本音を隠してしまうことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type2_q10
+    category: type
+    type_number: 2
+    text: "相手のために頑張りすぎて疲れることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 1.0, defense: 1.0 }
+    tags: ["self", "behavior"]
+    next: null
+
+  - id: type2_q11
+    category: type
+    type_number: 2
+    text: "人から嫌われることが怖い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type2_q12
+    category: type
+    type_number: 2
+    text: "相手の気持ちを読み違えると落ち込む。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear", "emotion"]
+    next: null
+
+  - id: type2_q13
+    category: type
+    type_number: 2
+    text: "自分の価値を「人の役に立つか」で判断しがち。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type2_q14
+    category: type
+    type_number: 2
+    text: "相手の反応に敏感。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["other", "defense"]
+    next: null
+
+  - id: type2_q15
+    category: type
+    type_number: 2
+    text: "自分の欲求を言うのが苦手。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null

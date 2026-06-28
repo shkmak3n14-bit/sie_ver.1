@@ -1,0 +1,12 @@
+meta:
+  type: 8
+  wing: 9
+  label: "8w9"
+  name: "挑戦する人（平和ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

@@ -1,0 +1,16 @@
+# dimension 別重み係数 — マスタは scoring.yaml
+
+version: "0.2.0"
+reference: scoring.yaml#weights
+
+dimensions:
+  core: 1.0
+  fear: 1.0
+  desire: 1.0
+  defense: 1.0
+
+scale:
+  min: 0
+  max: 3
+
+reverse_score_formula: "max - answer"

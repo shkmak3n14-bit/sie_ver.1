@@ -1,0 +1,103 @@
+meta:
+  version: "0.2.0"
+  template: question.episode
+  category: episode
+  question_count: 10
+  input_type: free_text
+  description: "幼少期エピソードの構造化入力 — episode_analysis モジュールでタイプ補正に使用"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: episode_q01
+    category: episode
+    type_number: null
+    text: "子どものころ、親や先生にどんな言葉を言われると一番うれしかったですか？"
+    options: null
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["childhood", "emotion", "value"]
+    next: null
+
+  - id: episode_q02
+    category: episode
+    type_number: null
+    text: "逆に、どんな言葉や行動が「二度とされたくない」と感じましたか？"
+    options: null
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["childhood", "emotion", "behavior", "value"]
+    next: null
+
+  - id: episode_q03
+    category: episode
+    type_number: null
+    text: "そのとき、あなたはどう感じましたか？（自由記述）"
+    options: null
+    weight: { core: 0.8, fear: 1.0, desire: 1.0, defense: 0.8 }
+    tags: ["childhood", "emotion"]
+    next: null
+
+  - id: episode_q04
+    category: episode
+    type_number: null
+    text: "その場面で、あなたはどんな行動をとりましたか？"
+    options: null
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["childhood", "behavior"]
+    next: null
+
+  - id: episode_q05
+    category: episode
+    type_number: null
+    text: "家庭の中で「守らなければならないルール」だと感じていたものはありますか？"
+    options: null
+    weight: { core: 1.2, fear: 1.0, desire: 0.8, defense: 1.0 }
+    tags: ["childhood", "behavior", "value"]
+    next: null
+
+  - id: episode_q06
+    category: episode
+    type_number: null
+    text: "子どものころ、あなたが「大切にしていたもの」は何ですか？"
+    options: null
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["childhood", "emotion", "value"]
+    next: null
+
+  - id: episode_q07
+    category: episode
+    type_number: null
+    text: "親や兄弟との関係で、あなたが「我慢していたこと」はありますか？"
+    options: null
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["childhood", "emotion", "behavior"]
+    next: null
+
+  - id: episode_q08
+    category: episode
+    type_number: null
+    text: "幼少期の経験で、今のあなたの性格に影響していると感じる出来事はありますか？"
+    options: null
+    weight: { core: 1.2, fear: 1.0, desire: 1.0, defense: 1.0 }
+    tags: ["childhood", "emotion", "behavior", "value"]
+    next: null
+
+  - id: episode_q09
+    category: episode
+    type_number: null
+    text: "その出来事は、あなたの「恐れ」や「欲求」にどんな影響を与えていますか？"
+    options: null
+    weight: { core: 1.0, fear: 1.2, desire: 1.2, defense: 0.8 }
+    tags: ["childhood", "emotion", "value"]
+    next: null
+
+  - id: episode_q10
+    category: episode
+    type_number: null
+    text: "今振り返って、その経験はあなたの「価値観」にどんな影響を与えていますか？"
+    options: null
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["childhood", "emotion", "behavior", "value"]
+    next: null

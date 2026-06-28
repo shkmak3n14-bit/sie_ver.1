@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 6
+  type_name: "忠実な人"
+  center: head
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type6_q01
+    category: type
+    type_number: 6
+    text: "不安になりやすい。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 0.8 }
+    tags: ["self", "fear", "emotion"]
+    next: null
+
+  - id: type6_q02
+    category: type
+    type_number: 6
+    text: "物事を慎重に考える。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 1.0 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type6_q03
+    category: type
+    type_number: 6
+    text: "信頼できる人を大事にする。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["relationship", "desire"]
+    next: null
+
+  - id: type6_q04
+    category: type
+    type_number: 6
+    text: "最悪のケースを想定することが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type6_q05
+    category: type
+    type_number: 6
+    text: "安心できる環境を求める。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null
+
+  - id: type6_q06
+    category: type
+    type_number: 6
+    text: "自分の判断に自信が持てないことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type6_q07
+    category: type
+    type_number: 6
+    text: "群れの中で安心する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["relationship", "desire"]
+    next: null
+
+  - id: type6_q08
+    category: type
+    type_number: 6
+    text: "権威に対して複雑な感情がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.0 }
+    tags: ["other", "emotion"]
+    next: null
+
+  - id: type6_q09
+    category: type
+    type_number: 6
+    text: "ルールがあると安心する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear", "desire"]
+    next: null
+
+  - id: type6_q10
+    category: type
+    type_number: 6
+    text: "他人の意見を参考にすることが多い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["other", "defense"]
+    next: null
+
+  - id: type6_q11
+    category: type
+    type_number: 6
+    text: "自分の不安を隠すことがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type6_q12
+    category: type
+    type_number: 6
+    text: "信頼を裏切られることが怖い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 0.8 }
+    tags: ["self", "fear", "relationship"]
+    next: null
+
+  - id: type6_q13
+    category: type
+    type_number: 6
+    text: "予測できない状況が苦手。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type6_q14
+    category: type
+    type_number: 6
+    text: "何かを決めるときに時間がかかる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "behavior"]
+    next: null
+
+  - id: type6_q15
+    category: type
+    type_number: 6
+    text: "安心を求める気持ちが強い。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "core", "desire"]
+    next: null

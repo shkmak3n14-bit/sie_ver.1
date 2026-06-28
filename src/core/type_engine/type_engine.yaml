@@ -1,0 +1,98 @@
+id: type_engine_spec
+version: "0.2.0"
+description: "エニアグラム診断の最終統合ロジック仕様"
+
+references:
+  scoring: "../scoring/scoring.yaml"
+  questions: "../questions/"
+  implementation: "type_engine.py"
+
+dependencies:
+  allowed:
+    - "../scoring/"
+    - "../questions/"
+    - "../center_engine/"
+    - "../wing_engine/"
+    - "../episode_analysis/"
+  forbidden:
+    - "../../dialogue/"
+    - "../../models/"
+
+steps:
+  - id: load_questions
+    description: "type, center, wing, episode の質問データを読み込む"
+    inputs:
+      - "../questions/type{1..9}.yaml"
+      - "../questions/center.yaml"
+      - "../questions/wing.yaml"
+      - "../questions/episode_analysis.yaml"
+    outputs: [type_questions, center_questions, wing_questions, episode_questions]
+
+  - id: load_scoring
+    description: "scoring.yaml を読み込み options_map / 補正テーブルを取得"
+    inputs:
+      - "../scoring/scoring.yaml"
+    outputs: [scoring_config]
+
+  - id: score_types
+    description: "135問の回答からタイプ別スコアを計算する"
+    config: "../scoring/scoring.yaml#type_scoring"
+    formula: "(answer * core) + (answer * fear) + (answer * desire) + (answer * defense)"
+    outputs: [raw_scores]
+
+  - id: apply_center_adjustment
+    description: "センター判定に基づく乗算補正を適用する"
+    config: "../scoring/scoring.yaml#center_adjustment"
+    method: multiply
+    note: "dominant_center に属するタイプのみ (1+adj) を乗算"
+    outputs: [center_result, scores_after_center]
+
+  - id: apply_wing_adjustment
+    description: "ウイング判定に基づく乗算補正を適用する"
+    config: "../scoring/scoring.yaml#wing_adjustment"
+    method: multiply
+    note: "dominant_wing の type エントリに従い乗算"
+    outputs: [wing_result, scores_after_wing]
+
+  - id: apply_episode_adjustment
+    description: "幼少期エピソードのシグナルマッチに基づく加算補正"
+    config: "../scoring/scoring.yaml#episode_adjustment"
+    method: add
+    optional: true
+    outputs: [episode_result, adjusted_scores]
+
+  - id: extract_candidates
+    description: "補正後スコアから上位3タイプを候補として抽出"
+    config: "../scoring/scoring.yaml#type_scoring.top_n"
+    outputs: [candidates]
+
+  - id: decide_final_type
+    description: "補正後スコアの最大値を最終タイプとする"
+    config: "../scoring/scoring.yaml#final_decision"
+    method: max_score
+    outputs: [main_type, confidence, wing_label]
+
+output:
+  main_type: "integer 1-9"
+  candidates: "integer[3] 上位3タイプ"
+  raw_scores: "type -> float 補正前"
+  adjusted_scores: "type -> float 補正後"
+  center_result:
+    dominant_center: "instinct | thinking | feeling"
+    center_scores: "center -> float"
+    adjustments_applied: "type -> float"
+  wing_result:
+    dominant_wing: "string e.g. 7w8"
+    wing_scores: "wing -> float"
+    adjustments_applied: "type -> float"
+  episode_result:
+    matched_signals: "string[]"
+    adjustments_applied: "type -> float"
+  confidence: "high | medium | low"
+  wing_label: "string e.g. 3w2"
+  corrections_applied: "center | wing | episode"
+
+execution:
+  module: type_engine.py
+  entrypoint: TypeEngine.run
+  cli: "python type_engine.py --answers path/to/answers.json"

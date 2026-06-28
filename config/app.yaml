@@ -1,0 +1,17 @@
+# S.I.E 全体設定
+
+app:
+  name: "Support Intelligence on Ego"
+  short_name: "S.I.E"
+  persona_name: "サイ"
+  version: "0.1.0"
+
+paths:
+  questions: "src/core/questions/"
+  models: "src/models/"
+  data: "data/"
+
+modules:
+  core: "src/core/"
+  dialogue: "src/dialogue/"
+  ui: "src/ui/"

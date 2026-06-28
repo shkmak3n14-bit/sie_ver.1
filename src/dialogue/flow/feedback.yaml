@@ -1,0 +1,9 @@
+# 回答後フィードバック
+
+phase: feedback
+version: "0.1.0"
+
+steps: []
+
+templates:
+  acknowledge: "feedback.acknowledge"

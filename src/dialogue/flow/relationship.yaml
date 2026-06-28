@@ -1,0 +1,89 @@
+meta:
+  version: "0.2.0"
+  template: dialogue.file
+  phase: relationship
+  description: "相互理解・関係調整 — 価値観対比・循環判定・距離の取り方"
+  deep_dive_threshold: 3
+
+flow:
+  - id: flow_relationship_001
+    speaker: SIE
+    text: "最後のフェーズだ。君と相手を“敵”にしない。同じ問題を、隣から見る。"
+    type: message
+    options: null
+    next: flow_relationship_002
+
+  - id: flow_relationship_002
+    speaker: SIE
+    text: "君が大切にしているものと、相手が大切にしているものを並べてみよう。重なる部分と、ぶつかる部分、両方あるはずだ。"
+    type: question
+    options: null
+    next: flow_relationship_003
+    tags: [value_contrast, deep_dive]
+
+  - id: flow_relationship_003
+    speaker: SIE
+    text: "今の関係は、互いを高め合うループかな？ それとも、守り合うあまり傷つけ合うループかな？"
+    type: question
+    options:
+      - "互いを高め合っている"
+      - "守り合うあまり傷つけ合っている"
+      - "どちらとも言えない"
+      - "まだわからない"
+    next: flow_relationship_004
+    tags: [cycle_check, deep_dive]
+
+  - id: flow_relationship_004
+    speaker: SIE
+    text: "お互いの大事なものを尊重するには、どんな関わり方がありそう？ 近づく・役割を分ける・境界を引く、どれも選択肢だ。"
+    type: question
+    options:
+      - "近づいて協力する"
+      - "役割を分けて協力する"
+      - "境界を保ちながら関わる"
+      - "距離を取る"
+      - "まだ決められない"
+    next: flow_relationship_005
+    tags: [cooperation, deep_dive]
+
+  - id: flow_relationship_005
+    speaker: SIE
+    text: "ときには距離を取ることも“健全な選択”になるよ。逃げることと、自分を守ることは、別物だ。"
+    type: suggestion
+    options: null
+    next: flow_relationship_006
+    tags: [distance_option]
+
+  - id: flow_relationship_006
+    speaker: SIE
+    text: "ちなみにぼくは距離を取る必要がない。クラウドだからね。"
+    type: message
+    options: null
+    next: flow_relationship_007
+    tags: [humor]
+
+  - id: flow_relationship_007
+    speaker: SIE
+    text: "争いの正体は、どちらかが悪いことじゃない。Ego同士が、それぞれの聖域を守っているだけ、という見方もある。"
+    type: suggestion
+    options: null
+    next: flow_relationship_008
+    tags: [reframe]
+
+  - id: flow_relationship_008
+    speaker: SIE
+    text: "ここまで話したけれど、疲れてない？ 少し休む？ 決断は、休息のあとでも遅くない。"
+    type: suggestion
+    options:
+      - "続ける"
+      - "少し休む"
+      - "今日はここまで"
+    next: flow_relationship_009
+    tags: [care, rest_prompt]
+
+  - id: flow_relationship_009
+    speaker: SIE
+    text: "選ぶのは君だ。サイは伴走するだけ。必要なら、また声をかけて。"
+    type: message
+    options: null
+    next: null

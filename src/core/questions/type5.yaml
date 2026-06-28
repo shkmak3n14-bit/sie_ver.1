@@ -1,0 +1,214 @@
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 5
+  type_name: "観察する人"
+  center: head
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: type5_q01
+    category: type
+    type_number: 5
+    text: "一人の時間が必要だと感じる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type5_q02
+    category: type
+    type_number: 5
+    text: "情報を集めることが好き。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type5_q03
+    category: type
+    type_number: 5
+    text: "感情よりも理解を優先する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.0, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type5_q04
+    category: type
+    type_number: 5
+    text: "人との距離を取りたくなることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "relationship"]
+    next: null
+
+  - id: type5_q05
+    category: type
+    type_number: 5
+    text: "自分の内側の世界が豊か。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 1.0, defense: 0.8 }
+    tags: ["self", "core"]
+    next: null
+
+  - id: type5_q06
+    category: type
+    type_number: 5
+    text: "知識が増えると安心する。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 1.0, defense: 0.8 }
+    tags: ["self", "fear", "desire"]
+    next: null
+
+  - id: type5_q07
+    category: type
+    type_number: 5
+    text: "エネルギーが枯れる感覚がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type5_q08
+    category: type
+    type_number: 5
+    text: "人に頼るのが苦手。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.0, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense"]
+    next: null
+
+  - id: type5_q09
+    category: type
+    type_number: 5
+    text: "自分の領域を侵されるとストレス。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type5_q10
+    category: type
+    type_number: 5
+    text: "深く考えすぎることがある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "behavior"]
+    next: null
+
+  - id: type5_q11
+    category: type
+    type_number: 5
+    text: "物事を観察する癖がある。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.2, fear: 0.8, desire: 0.8, defense: 0.8 }
+    tags: ["self", "core", "behavior"]
+    next: null
+
+  - id: type5_q12
+    category: type
+    type_number: 5
+    text: "感情表現が控えめ。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "defense", "emotion"]
+    next: null
+
+  - id: type5_q13
+    category: type
+    type_number: 5
+    text: "何かを理解する前に行動したくない。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 1.0, desire: 1.0, defense: 1.0 }
+    tags: ["self", "behavior"]
+    next: null
+
+  - id: type5_q14
+    category: type
+    type_number: 5
+    text: "自分のペースを乱されるのが苦手。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 0.8, fear: 1.2, desire: 0.8, defense: 1.0 }
+    tags: ["self", "fear"]
+    next: null
+
+  - id: type5_q15
+    category: type
+    type_number: 5
+    text: "知識や洞察が自分の価値だと感じる。"
+    options:
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight: { core: 1.0, fear: 0.8, desire: 1.2, defense: 0.8 }
+    tags: ["self", "desire"]
+    next: null

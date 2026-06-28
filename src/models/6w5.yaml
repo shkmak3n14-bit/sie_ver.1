@@ -1,0 +1,12 @@
+meta:
+  type: 6
+  wing: 5
+  label: "6w5"
+  name: "忠実な人（調査ウィング）"
+version: "0.1.0"
+
+profile:
+  summary: ""
+  strengths: []
+  growth_edges: []
+  dialogue_hints: []

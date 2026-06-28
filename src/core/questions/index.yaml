@@ -1,0 +1,34 @@
+meta:
+  version: "0.2.0"
+  total_type_questions: 135
+  total_center_questions: 15
+  total_wing_questions: 54
+
+  total_episode_questions: 10
+
+files:
+  types:
+    - { type_id: 1, file: type1.yaml, type_name: "改革する人", center: gut }
+    - { type_id: 2, file: type2.yaml, type_name: "助ける人", center: heart }
+    - { type_id: 3, file: type3.yaml, type_name: "達成する人", center: heart }
+    - { type_id: 4, file: type4.yaml, type_name: "個性を求める人", center: heart }
+    - { type_id: 5, file: type5.yaml, type_name: "観察する人", center: head }
+    - { type_id: 6, file: type6.yaml, type_name: "忠実な人", center: head }
+    - { type_id: 7, file: type7.yaml, type_name: "熱中する人", center: head }
+    - { type_id: 8, file: type8.yaml, type_name: "挑戦する人", center: gut }
+    - { type_id: 9, file: type9.yaml, type_name: "平和を求める人", center: gut }
+  center: center.yaml
+  wing: wing.yaml
+  episode: episode_analysis.yaml
+
+load_order:
+  - types
+  - center
+  - wing
+  - episode
+
+id_format:
+  type: "type{n}_q{nn}"
+  center: "center_q{nn}"
+  wing: "wing_q{nn}"
+  episode: "episode_q{nn}"

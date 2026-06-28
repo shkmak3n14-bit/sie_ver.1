@@ -1,0 +1,84 @@
+meta:
+  version: "0.2.0"
+  template: dialogue.file
+  phase: other_understanding
+  description: "他者理解 — エピソード構造化・行動感情推定・観点転換"
+  deep_dive_threshold: 3
+
+flow:
+  - id: flow_other_001
+    speaker: SIE
+    text: "ここからは、理解したい相手の話を聞く。相手をラベル貼りしない。推定にとどめる。"
+    type: message
+    options: null
+    next: flow_other_002
+
+  - id: flow_other_002
+    speaker: SIE
+    text: "理解したい相手との出来事を一つ教えてほしい。いつ・どこで・何が起きたか、順番にで構わない。"
+    type: question
+    options: null
+    next: flow_other_003
+    tags: [episode, deep_dive]
+
+  - id: flow_other_003
+    speaker: SIE
+    text: "そのとき、君はどう感じて、どう動いた？ 感情と行動、両方聞かせてほしい。"
+    type: question
+    options: null
+    next: flow_other_004
+    tags: [self_reaction, deep_dive]
+
+  - id: flow_other_004
+    speaker: SIE
+    text: "相手は何と言い、どう振る舞った？ 君が見た事実だけで十分だ。悪意を推測する必要はない。"
+    type: question
+    options: null
+    next: flow_other_005
+    tags: [their_behavior, deep_dive]
+
+  - id: flow_other_005
+    speaker: SIE
+    text: "ここまでで三つのエピソード分、深く聞いた。疲れた？ 少し休む？"
+    type: suggestion
+    options:
+      - "続ける"
+      - "少し休む"
+    next: flow_other_006
+    tags: [care, rest_prompt]
+
+  - id: flow_other_006
+    speaker: SIE
+    text: "その出来事のあと、関係はどう変わった？ 距離が近づいたか、離れたか、変わらなかったか。"
+    type: question
+    options:
+      - "距離が近づいた"
+      - "距離が離れた"
+      - "あまり変わらなかった"
+      - "複雑・言葉にしにくい"
+    next: flow_other_007
+    tags: [relationship_impact]
+
+  - id: flow_other_007
+    speaker: SIE
+    text: "別の見方を一つ提案していい？ 相手は自分の大切なものを守ろうとしていたのかもしれない。悪人ではなく、Ego同士のすれ違いの可能性がある。"
+    type: suggestion
+    options: null
+    next: flow_other_008
+    tags: [reframe]
+
+  - id: flow_other_008
+    speaker: SIE
+    text: "相手のタイプを“確定”しない。あと2〜3件エピソードがあれば、パターンはより見えてくる。続けるか、ここで止めるか、君が決めていい。"
+    type: message
+    options: null
+    next: flow_other_009
+    tags: [disclaimer]
+
+  - id: flow_other_009
+    speaker: SIE
+    text: "計算結果より、君が語った事実の方が信頼できる。…私がそう言うのも、プログラムの自慢だ。"
+    type: message
+    options: null
+    next: null
+    tags: [humor]

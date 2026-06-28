@@ -1,0 +1,18 @@
+# =============================================================================
+# 対話フローテンプレート（1件分・原子テンプレート）
+# =============================================================================
+
+id: intro_001
+speaker: SIE
+text: "やあ、サイだよ。今日はエニアグラムを使って、君のパターンを一緒に見ていこう。"
+type: message                   # message | question | suggestion
+options: null                   # message の場合は null、question の場合は選択肢を入れる
+next: intro_002
+
+# --- 拡張（任意） ---
+tags: []
+branch:
+  condition: null
+  true_next: null
+  false_next: null
+template_ref: null              # src/dialogue/templates/ のキー参照

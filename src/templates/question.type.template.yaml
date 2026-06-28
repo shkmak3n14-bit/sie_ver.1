@@ -1,0 +1,46 @@
+# =============================================================================
+# タイプ別診断質問テンプレート — type1.yaml 〜 type9.yaml
+# =============================================================================
+# 135問（9タイプ × 15問）。各ファイル15問。
+# category: type / type_number: 1〜9
+# =============================================================================
+
+meta:
+  version: "0.2.0"
+  template: question.type
+  category: type
+  type_number: 1
+  type_name: "改革する人"
+  center: gut                   # gut | heart | head（参考情報）
+  question_count: 15
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  - id: T1_01
+    category: type
+    type_number: 1
+    text: "ここに質問文を入れる"
+    options: null
+    weight: { core: 1.0, fear: 1.0, desire: 1.0, defense: 1.0 }
+    tags: ["self"]
+    next: T1_02
+
+  - id: T1_02
+    category: type
+    type_number: 1
+    text: "2問目"
+    options: null
+    weight: { core: 1.0, fear: 0.8, desire: 0.8, defense: 1.2 }
+    tags: ["self", "emotion"]
+    next: T1_03
+
+  # ... T1_03 〜 T1_15 まで同形式で追加

@@ -1,0 +1,281 @@
+id: scoring_rules
+version: "0.2.0"
+description: "エニアグラム診断スコアリング仕様 — type_engine から参照"
+
+# =============================================================================
+# データソース（質問ファイル）
+# =============================================================================
+data_sources:
+  type:
+    path: "../questions/type{1..9}.yaml"
+    count: 135
+    questions_per_type: 15
+    category: type
+  center:
+    path: "../questions/center.yaml"
+    count: 15
+    category: center
+  wing:
+    path: "../questions/wing.yaml"
+    count: 54
+    wings: 18
+    questions_per_wing: 3
+    category: wing
+  episode:
+    path: "../questions/episode_analysis.yaml"
+    count: 10
+    category: episode
+    input_type: free_text
+
+# =============================================================================
+# 1. 選択肢の数値化
+# =============================================================================
+options_map:
+  "ほとんどない": 0
+  "たまにある": 1
+  "よくある": 2
+  "ほぼいつもそう": 3
+
+options_scale:
+  min: 0
+  max: 3
+
+# =============================================================================
+# 2. weight の扱い
+# =============================================================================
+weights:
+  core: 1.0
+  fear: 1.0
+  desire: 1.0
+  defense: 1.0
+
+question_score:
+  formula: "(answer_value * core) + (answer_value * fear) + (answer_value * desire) + (answer_value * defense)"
+  note: "各質問の weight は質問 YAML 内の core/fear/desire/defense を使用。上記 weights は未指定時のデフォルト。"
+  reverse_scored:
+    enabled: true
+    formula: "(scale.max - answer_value) を上式に代入"
+  max_per_question: 12.0  # 3 * (1.0+1.0+1.0+1.0) 仮値
+
+# =============================================================================
+# 3. タイプ別集計
+# =============================================================================
+type_scoring:
+  method: sum
+  source: type
+  group_by: type_number
+  questions_per_type: 15
+  top_n: 3
+  max_raw_score: 180.0  # 15問 × 12.0（仮）
+  candidates:
+    label: "タイプ候補"
+    count: 3
+    tie_breaker:
+      - "スコア差が同点なら、回答のばらつき（標準偏差）が小さいタイプを優先"
+      - "それでも同点なら type_number 昇順"
+  confidence:
+    high: "1位と2位の差が全体の15%以上"
+    medium: "差が8%〜14%"
+    low: "差が7%以下"
+
+# =============================================================================
+# 4. センター補正
+# =============================================================================
+center_scoring:
+  method: sum
+  source: center
+  group_by: type_number   # instinct | thinking | feeling
+  dominant_center: "center_scores の最大センター"
+  note: "センターを先に決めない — タイプスコアへの乗算補正として適用"
+
+center_adjustment:
+  method: multiply
+  instinct:
+    types: [8, 9, 1]
+    type8: 0.05
+    type9: 0.05
+    type1: 0.05
+  thinking:
+    types: [5, 6, 7]
+    type5: 0.05
+    type6: 0.05
+    type7: 0.05
+  feeling:
+    types: [2, 3, 4]
+    type2: 0.05
+    type3: 0.05
+    type4: 0.05
+  apply_rule: |
+    1. center.yaml の回答を instinct/thinking/feeling ごとに合計
+    2. 最高スコアのセンターを dominant_center とする
+    3. dominant_center に属するタイプの type_scores に (1 + adjustment) を乗算
+    4. 主タイプが dominant センター外の場合、confidence を 1 段階下げる
+
+# =============================================================================
+# 5. ウイング補正
+# =============================================================================
+wing_scoring:
+  method: sum
+  source: wing
+  group_by: type_number   # "1w9" 形式
+  requires: primary_type_candidate
+  note: "タイプ候補確定後に wing.yaml の回答を集計"
+
+wing_adjustment:
+  method: multiply
+  primary_boost: 0.03
+  wing_boost: 0.01
+  "1w9":
+    type1: 0.03
+    type9: 0.01
+  "1w2":
+    type1: 0.03
+    type2: 0.01
+  "2w1":
+    type2: 0.03
+    type1: 0.01
+  "2w3":
+    type2: 0.03
+    type3: 0.01
+  "3w2":
+    type3: 0.03
+    type2: 0.01
+  "3w4":
+    type3: 0.03
+    type4: 0.01
+  "4w3":
+    type4: 0.03
+    type3: 0.01
+  "4w5":
+    type4: 0.03
+    type5: 0.01
+  "5w4":
+    type5: 0.03
+    type4: 0.01
+  "5w6":
+    type5: 0.03
+    type6: 0.01
+  "6w5":
+    type6: 0.03
+    type5: 0.01
+  "6w7":
+    type6: 0.03
+    type7: 0.01
+  "7w6":
+    type7: 0.03
+    type6: 0.01
+  "7w8":
+    type7: 0.03
+    type8: 0.01
+  "8w7":
+    type8: 0.03
+    type7: 0.01
+  "8w9":
+    type8: 0.03
+    type9: 0.01
+  "9w8":
+    type9: 0.03
+    type8: 0.01
+  "9w1":
+    type9: 0.03
+    type1: 0.01
+  apply_rule: |
+    1. 主タイプ候補に対応する wing 質問群（3問×該当w）のスコアを合計
+    2. 18種のうち最高スコアの w を dominant_wing とする
+    3. wing_adjustment テーブルに従い type_scores に乗算補正
+    4. wing_label（例: 7w8）を出力
+
+# =============================================================================
+# 6. エピソード補正
+# =============================================================================
+episode_scoring:
+  method: signal_match
+  source: episode
+  optional: true
+  input_type: free_text
+  extract_dimensions: [emotion, behavior, value]
+  max_total_adjustment: 0.15
+  note: "episode_analysis.yaml の自由記述からシグナルを抽出し加算補正"
+
+episode_adjustment:
+  method: add
+  anger_suppression:
+    signals: ["怒りを抑", "我慢", "静かに"]
+    type9: 0.03
+    type1: 0.02
+  desire_for_evaluation:
+    signals: ["評価", "認められ", "褒められ", "成果"]
+    type3: 0.04
+  desire_for_freedom:
+    signals: ["自由", "束縛", "選択肢", "退屈"]
+    type7: 0.03
+    type8: 0.02
+  need_for_help:
+    signals: ["助け", "必要とされ", "世話", "奉仕"]
+    type2: 0.03
+  need_for_authenticity:
+    signals: ["本物", "特別", "独自", "深い感情"]
+    type4: 0.03
+  need_for_knowledge:
+    signals: ["理解", "距離", "観察", "一人"]
+    type5: 0.03
+  need_for_security:
+    signals: ["不安", "安心", "信頼", "準備"]
+    type6: 0.03
+  need_for_peace:
+    signals: ["平和", "争い", "調和", "穏やか"]
+    type9: 0.03
+  need_for_control:
+    signals: ["支配", "強さ", "公正", "弱さ"]
+    type8: 0.03
+  need_for_correctness:
+    signals: ["正し", "ルール", "改善", "完璧"]
+    type1: 0.03
+  apply_rule: |
+    1. episode_q01〜q10 の自由記述を解析
+    2. emotion / behavior / value タグに応じてシグナルマッチ
+    3. 該当する episode_adjustment を加算（上限 max_total_adjustment）
+    4. 複数シグナル命中時は合算（上限内）
+
+# =============================================================================
+# 7. 最終タイプ決定
+# =============================================================================
+pipeline:
+  order:
+    - type_scoring
+    - center_adjustment
+    - wing_adjustment
+    - episode_adjustment
+    - final_decision
+  reference: "../type_engine/pipeline.yaml"
+
+final_decision:
+  method: max_score
+  output:
+    primary_type: "補正後スコア最大のタイプ（1〜9）"
+    secondary_types: "上位2〜3位（top_n 参照）"
+    wing_label: "dominant_wing（例: 3w2）"
+    dominant_center: "instinct | thinking | feeling"
+    confidence: "high | medium | low"
+    corrections_applied:
+      - center
+      - wing
+      - episode
+  formula: |
+    final_score[type_n] =
+      sum(type_questions[type_n])
+      * (1 + center_adjustment[type_n])
+      * (1 + wing_adjustment[type_n])
+      + episode_adjustment[type_n]
+    primary_type = argmax(final_score)
+
+# =============================================================================
+# type_engine 参照
+# =============================================================================
+type_engine:
+  config_file: "scoring.yaml"
+  modules:
+    scoring: "."
+    center_engine: "../center_engine/"
+    wing_engine: "../wing_engine/"
+    episode_analysis: "../episode_analysis/"

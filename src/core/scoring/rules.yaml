@@ -1,0 +1,12 @@
+# スコアリング基本ルール — マスタは scoring.yaml
+
+version: "0.2.0"
+reference: scoring.yaml
+
+scoring:
+  method: "sum( (answer * core) + (answer * fear) + (answer * desire) + (answer * defense) )"
+  per_type_max: 180.0
+
+candidate_extraction:
+  top_n: 3
+  source: scoring.yaml#type_scoring

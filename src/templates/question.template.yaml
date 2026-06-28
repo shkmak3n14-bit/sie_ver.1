@@ -1,0 +1,72 @@
+# =============================================================================
+# S.I.E 統一質問テンプレート（ファイル単位）
+# =============================================================================
+# 用途: type1.yaml 〜 type9.yaml / center.yaml / wing.yaml
+# 参照: docs/yaml-template-spec.md
+# 共有: src/core（診断）・ src/dialogue（対話）の双方から参照可能
+# =============================================================================
+
+meta:
+  version: "0.2.0"
+  template: question.file
+  category: type              # type | center | wing | dialogue
+  # --- category 別の識別子 ---
+  type_number: 1                # type: 1〜9 | center: instinct/thinking/feeling | wing: "1w9"
+  type_name: "改革する人"       # 任意（表示用）
+  question_count: 15            # このファイル内の質問数（type=15, center=任意, wing=2）
+  # --- 共通オプション（ファイル全体のデフォルト） ---
+  default_options:
+    - "ほとんどない"
+    - "たまにある"
+    - "よくある"
+    - "ほぼいつもそう"
+  default_weight:
+    core: 1.0
+    fear: 1.0
+    desire: 1.0
+    defense: 1.0
+
+questions:
+  # ---------------------------------------------------------------------------
+  # 質問1件分 — 以下をコピーして questions 配列に追加
+  # ---------------------------------------------------------------------------
+  - id: q001                    # 一意ID（ファイル内・全体で重複不可）
+    category: type              # type / center / wing / dialogue
+    type_number: 1              # type: 1〜9 | center: instinct/thinking/feeling | wing: "1w9"
+    text: "ここに質問文を入れる"
+    options:                    # null の場合 meta.default_options を使用
+      - "ほとんどない"
+      - "たまにある"
+      - "よくある"
+      - "ほぼいつもそう"
+    weight:
+      core: 1.0                 # 核心動機
+      fear: 1.0                 # 恐れ
+      desire: 1.0               # 欲求
+      defense: 1.0              # 防衛パターン
+    tags:
+      - "self"
+      - "childhood"
+      - "emotion"
+    next: null                  # 次の質問ID（分岐がある場合のみ）
+    # --- 拡張フィールド（任意） ---
+    reverse_scored: false       # true: 選択肢を反転採点
+    required: true
+    branch:
+      condition: null           # 将来: "answer >= 3" 等
+      true_next: null
+      false_next: null
+
+  - id: q002
+    category: type
+    type_number: 1
+    text: "2問目の質問文"
+    options: null               # default_options を継承
+    weight:
+      core: 1.0
+      fear: 0.8
+      desire: 0.8
+      defense: 1.2
+    tags:
+      - "self"
+    next: q003

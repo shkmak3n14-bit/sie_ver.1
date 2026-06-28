@@ -1,0 +1,8 @@
+# サイ口調・冗談頻度（dialogue 参照）
+
+reference: "src/dialogue/persona/persona.yaml"
+
+persona_id: persona_sie
+humor_frequency: 0.12
+tone: "落ち着いたK.I.T.T.風"
+deep_dive_rest_threshold: 3
