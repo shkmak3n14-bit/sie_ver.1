@@ -25,6 +25,26 @@ from utils.yaml_loader import QUESTIONS_DIR, SCORING_PATH, load_questions, load_
 EPISODE_FILE = QUESTIONS_DIR / "episode_analysis.yaml"
 DIMENSIONS = ("core", "fear", "desire", "defense")
 
+DEBUG_LOG_PATH = Path(__file__).resolve().parents[3] / "debug-7cf15b.log"
+
+
+def _debug_log(location: str, message: str, data: dict, hypothesis_id: str) -> None:
+    # #region agent log
+    import json
+    import time
+
+    payload = {
+        "sessionId": "7cf15b",
+        "timestamp": int(time.time() * 1000),
+        "location": location,
+        "message": message,
+        "data": data,
+        "hypothesisId": hypothesis_id,
+    }
+    with DEBUG_LOG_PATH.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    # #endregion
+
 
 class TypeEngine:
     """エニアグラム診断の最終統合エンジン。"""
@@ -235,11 +255,32 @@ class TypeEngine:
         raw_scores, answer_values = self.score_types(answers)
 
         center_evaluation = self.center_engine.evaluate(answers)
-        wing_evaluation = self.wing_engine.evaluate(answers)
+        wing_scores_payload = self.wing_engine.evaluate(answers)
 
         scores_after_center, center_result = self.apply_center_adjustment(
             raw_scores, center_evaluation
         )
+        scores_before_wing, episode_result = self.apply_episode_adjustment(
+            raw_scores, scores_after_center, answers
+        )
+
+        candidates = self.extract_candidates(scores_before_wing, answer_values)
+        main_type = candidates[0] if candidates else 1
+        confidence = self.compute_confidence(scores_before_wing, candidates)
+
+        primary_wing = self.wing_engine.select_primary_wing_for_type(
+            main_type,
+            wing_scores_payload["scores"],
+        )
+        wing_evaluation = {
+            **wing_scores_payload,
+            "primary_wing": primary_wing,
+            "ranking": self.wing_engine.ranking_for_main_type(
+                main_type,
+                wing_scores_payload["scores"],
+            ),
+        }
+
         scores_after_wing, wing_result = self.apply_wing_adjustment(
             scores_after_center, wing_evaluation
         )
@@ -247,9 +288,21 @@ class TypeEngine:
             raw_scores, scores_after_wing, answers
         )
 
-        candidates = self.extract_candidates(adjusted_scores, answer_values)
-        main_type = candidates[0] if candidates else 1
-        confidence = self.compute_confidence(adjusted_scores, candidates)
+        # #region agent log
+        _debug_log(
+            "type_engine.py:run",
+            "main_type vs wing_label order",
+            {
+                "main_type": main_type,
+                "candidates": candidates,
+                "wing_label_from_wing_result": wing_result.get("wing_label"),
+                "wing_primary_after_main_type": primary_wing,
+                "wing_ranking_adjacent": wing_evaluation.get("ranking", []),
+                "runId": "post-fix",
+            },
+            "B",
+        )
+        # #endregion
 
         dominant_center = center_result.get("dominant_center")
         primary_in_center = False

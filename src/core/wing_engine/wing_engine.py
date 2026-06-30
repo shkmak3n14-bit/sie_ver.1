@@ -27,6 +27,38 @@ WING_LABELS = (
     "9w8", "9w1",
 )
 
+ADJACENT_WING_LABELS: dict[int, tuple[str, str]] = {
+    1: ("1w9", "1w2"),
+    2: ("2w1", "2w3"),
+    3: ("3w2", "3w4"),
+    4: ("4w3", "4w5"),
+    5: ("5w4", "5w6"),
+    6: ("6w5", "6w7"),
+    7: ("7w6", "7w8"),
+    8: ("8w7", "8w9"),
+    9: ("9w8", "9w1"),
+}
+
+DEBUG_LOG_PATH = Path(__file__).resolve().parents[3] / "debug-7cf15b.log"
+
+
+def _debug_log(location: str, message: str, data: dict, hypothesis_id: str) -> None:
+    # #region agent log
+    import json
+    import time
+
+    payload = {
+        "sessionId": "7cf15b",
+        "timestamp": int(time.time() * 1000),
+        "location": location,
+        "message": message,
+        "data": data,
+        "hypothesisId": hypothesis_id,
+    }
+    with DEBUG_LOG_PATH.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+    # #endregion
+
 
 class WingEngine:
     """ウイング判定エンジン。"""
@@ -64,11 +96,74 @@ class WingEngine:
         if answered:
             primary_wing = ranking[0][0]
 
+        # #region agent log
+        adjacent_for_9 = {
+            label: scores.get(label, 0.0) for label in ADJACENT_WING_LABELS.get(9, ())
+        }
+        _debug_log(
+            "wing_engine.py:evaluate",
+            "global wing selection",
+            {
+                "primary_wing_global": primary_wing,
+                "top3_global": ranking[:3],
+                "adjacent_scores_type9": adjacent_for_9,
+                "main_type_not_used": True,
+            },
+            "A",
+        )
+        # #endregion
+
         return {
             "primary_wing": primary_wing,
             "scores": scores,
             "ranking": [{"wing": k, "score": v} for k, v in ranking if v > 0],
         }
+
+    def select_primary_wing_for_type(
+        self,
+        main_type: int,
+        scores: dict[str, float],
+    ) -> str | None:
+        """メインタイプ確定後、隣接ウイング2種のみから最高スコアを選ぶ。"""
+        labels = ADJACENT_WING_LABELS.get(main_type, ())
+        if not labels:
+            return None
+
+        ranked = sorted(
+            ((label, scores.get(label, 0.0)) for label in labels),
+            key=lambda item: (-item[1], item[0]),
+        )
+        if not ranked or ranked[0][1] <= 0:
+            return None
+
+        selected = ranked[0][0]
+        # #region agent log
+        _debug_log(
+            "wing_engine.py:select_primary_wing_for_type",
+            "adjacent wing selection",
+            {
+                "main_type": main_type,
+                "candidates": labels,
+                "scores": {label: scores.get(label, 0.0) for label in labels},
+                "selected_wing": selected,
+                "runId": "post-fix",
+            },
+            "FIX",
+        )
+        # #endregion
+        return selected
+
+    def ranking_for_main_type(
+        self,
+        main_type: int,
+        scores: dict[str, float],
+    ) -> list[dict[str, float | str]]:
+        labels = ADJACENT_WING_LABELS.get(main_type, ())
+        ranked = sorted(
+            ((label, scores.get(label, 0.0)) for label in labels),
+            key=lambda item: (-item[1], item[0]),
+        )
+        return [{"wing": label, "score": score} for label, score in ranked if score > 0]
 
 
 def main() -> None:

@@ -25,6 +25,7 @@ from src.core.wing_engine.wing_engine import run_wing_engine
 from src.dialogue.content.content_loader import load_enneagram_foundation
 from src.dialogue.flow.flow_loader import load_flow
 from src.dialogue.persona.persona import load_persona
+from src.ui.result_view import render_persona_result
 from src.utils.yaml_loader import load_all_type_questions, load_questions_by_category
 
 DEFAULT_OPTIONS = ["ほとんどない", "たまにある", "よくある", "ほぼいつもそう"]
@@ -250,15 +251,7 @@ def run_self_understanding() -> None:
 
     result = st.session_state.type_result
     if result:
-        type_res = result["type"]
-        st.json(
-            {
-                "main_type": type_res.get("main_type"),
-                "candidates": type_res.get("candidates"),
-                "wing_label": type_res.get("wing_label"),
-                "confidence": type_res.get("confidence"),
-            }
-        )
+        render_persona_result(result.get("type", {}), result.get("center"))
 
     render_flow_steps(self_flow, "self")
 
