@@ -1,0 +1,62 @@
+id: type_8_result
+type_number: 8
+type_name: "強くありたい人"
+
+summary_200: >
+  ここに200文字程度のタイプ概要を記述する。
+
+center:
+  name: "ここにセンター名を記述する"
+  reason: >
+    ここにセンター判定の理由を記述する。
+
+wing:
+  wing_type: "ここにウイングタイプを記述する"
+  influence: >
+    ここにウイングの影響を記述する。
+
+values:
+  important: >
+    ここに大切にしている価値観を記述する。
+  red_line: >
+    ここにレッドラインを記述する。
+
+cognitive_pattern: >
+  ここに認知のクセを記述する。
+
+childhood_story: >
+  ここに幼少期のコアストーリーを記述する。
+
+external_impression: >
+  ここに他者からの印象を記述する。
+
+integration_disintegration:
+  growth_arrow: "ここに成長の矢を記述する"
+  stress_arrow: "ここにストレスの矢を記述する"
+  explanation: >
+    ここに矢の説明を記述する。
+
+good_cycle: >
+  ここに好循環の状態を記述する。
+
+bad_cycle: >
+  ここに悪循環の状態を記述する。
+
+good_cycle_score: 0
+
+strength_usage: >
+  ここに強みの活かし方を記述する。
+
+communication:
+  good_style: >
+    ここに相性の良いコミュニケーションスタイルを記述する。
+  bad_style: >
+    ここに相性の悪いコミュニケーションスタイルを記述する。
+
+advice: >
+  ここに好転のためのアドバイスを記述する。
+
+maturity_level:
+  level: "ここに成熟度レベルを記述する"
+  description: >
+    ここに成熟度の説明を記述する。

@@ -22,6 +22,7 @@ from src.core.center_engine.center_engine import run_center_engine
 from src.core.episode_analysis.episode_engine import run_episode_engine
 from src.core.type_engine.type_engine import run_type_engine
 from src.core.wing_engine.wing_engine import run_wing_engine
+from src.dialogue.content.content_loader import load_enneagram_foundation
 from src.dialogue.flow.flow_loader import load_flow
 from src.dialogue.persona.persona import load_persona
 from src.utils.yaml_loader import load_all_type_questions, load_questions_by_category
@@ -95,6 +96,44 @@ def render_scale_questions(questions: list[dict], key_prefix: str) -> None:
         st.session_state.answers[q["id"]] = answer
 
 
+def render_enneagram_foundation(page: dict) -> None:
+    """エニアグラム基礎ページ（1ページ完結）を表示。"""
+    hero = page["hero"]
+    st.markdown(f"## {hero['title']}")
+    st.markdown(f"**{hero['tagline']}**")
+    for paragraph in hero.get("lead", []):
+        st.markdown(paragraph)
+    st.info(hero.get("note", ""))
+
+    for section in page.get("sections", []):
+        st.markdown("---")
+        st.markdown(f"### {section['number']}. {section['title']}")
+        for paragraph in section.get("paragraphs", []):
+            st.markdown(paragraph)
+        for bullet in section.get("bullets", []):
+            st.markdown(f"- {bullet}")
+        for item in section.get("type_list", []):
+            st.markdown(f"- {item}")
+        for center in section.get("centers", []):
+            st.markdown(f"**{center['name']}**  ")
+            st.markdown(center["description"])
+        for arrow in section.get("arrows", []):
+            st.markdown(f"**{arrow['label']}**  ")
+            st.markdown(arrow["description"])
+        for subtype in section.get("subtypes", []):
+            st.markdown(f"**{subtype['label']}**  ")
+            st.markdown(subtype["description"])
+        closing = section.get("closing")
+        if closing:
+            st.markdown(closing)
+
+    cta = page.get("cta", {})
+    st.markdown("---")
+    st.markdown(f"### {cta.get('title', '診断を始める')}")
+    for paragraph in cta.get("body", []):
+        st.markdown(paragraph)
+
+
 def render_episode_questions(questions: list[dict]) -> None:
     """幼少期エピソード（自由記述）を表示。"""
     for q in questions:
@@ -111,7 +150,7 @@ def render_episode_questions(questions: list[dict]) -> None:
 # -----------------------------
 # フローのロード
 # -----------------------------
-intro_flow = load_flow("intro")
+enneagram_foundation = load_enneagram_foundation()
 self_flow = load_flow("self_understanding")
 other_flow = load_flow("other_understanding")
 relation_flow = load_flow("relationship")
@@ -255,8 +294,9 @@ def run_relationship() -> None:
 st.title("S.I.E — Support Intelligence on Ego（サイ）")
 
 if st.session_state.phase == "intro":
-    render_flow_steps(intro_flow, "intro")
-    if st.button("診断を始める"):
+    render_enneagram_foundation(enneagram_foundation)
+    cta_label = enneagram_foundation.get("cta", {}).get("button", "診断を始める")
+    if st.button(cta_label, type="primary"):
         st.session_state.phase = "diagnosis"
         st.session_state.diagnosis_step = 0
         st.session_state.type_batch = 0

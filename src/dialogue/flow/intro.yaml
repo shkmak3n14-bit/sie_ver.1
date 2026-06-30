@@ -2,7 +2,7 @@ meta:
   version: "0.2.0"
   template: dialogue.file
   phase: intro
-  description: "診断前の導入 — 挨拶・目的説明・安心感・診断開始"
+  description: "診断開始直前の短い対話（基礎説明は content/enneagram_foundation.yaml）"
 
 flow:
   - id: flow_intro_001
